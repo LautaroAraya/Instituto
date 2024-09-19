@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InstitutoServices.Properties {
+namespace InstitutoWeb.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace InstitutoServices.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InstitutoServices.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InstitutoWeb.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,15 +57,6 @@ namespace InstitutoServices.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a https://databacklauty.azurewebsites.net/api/.
-        /// </summary>
-        internal static string UrlApi {
-            get {
-                return ResourceManager.GetString("UrlApi", resourceCulture);
             }
         }
     }
