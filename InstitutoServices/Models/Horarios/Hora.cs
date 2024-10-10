@@ -10,12 +10,12 @@ namespace InstitutoServices.Models.Horarios
         [NotMapped]
         public string Nombre
         {
-            get {
-                var recreo = EsRecreo ? "Recreo" : "";
-                return $"{recreo}{Desde.Hour:D2}:" +
-                    $"{Desde.Minute:D2} - " +
-                    $"{Hasta.Hour:D2}:" +
-                    $"{Hasta.Minute:D2}"; }
+            get { return EsRecreo?"Recreo":""+
+                    $"{Desde.Hour}:" +
+                    $"{Desde.Minute} - " +
+                    $"{Hasta.Hour}:" +
+                    $"{Hasta.Minute}"; }
+            set { nombre = value; }
         }
 
         public DateTime Desde { get; set; } = DateTime.MinValue;
