@@ -36,19 +36,47 @@
     <!-- Configuración de Firebase -->
     <script>
         const firebaseConfig = {
-            apiKey: "AIzaSyBosVc8LN9yjnEbxF66g8UhbGsxu3so9H8",
-            authDomain: "instituto20.firebaseapp.com",
-            projectId: "instituto20",
-            storageBucket: "instituto20.appspot.com",
-            messagingSenderId: "94204742950",
-            appId: "1:94204742950:web:113d55ed727a1894b545e7"
+            apiKey: "AIzaSyBdZO4CzELGDrsjhCajVQPG9piLejxCD4I",
+            authDomain: "institutooaut.firebaseapp.com",
+            projectId: "institutooaut",
+            storageBucket: "institutooaut.appspot.com",
+            messagingSenderId: "952017218267",
+            appId: "1:952017218267:web:09f2591295022af08bfafe"
+
         };
         firebase.initializeApp(firebaseConfig);
         console.log(firebase);
         window.firebaseAuth = {
+
             signInWithEmailPassword: async function (email, password) {
                 try {
                     const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+                    return userCredential.user;
+                } catch (error) {
+                    console.error("Error en autenticación:", error.message);
+                    return null;
+                }
+            },
+
+            createUserWithEmailAndPassword: async function (email, password) {
+                try {
+                    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password)
+                        .then((userCredential) => {
+                            // El usuario se ha creado correctamente
+                            const user = userCredential.user;
+
+                            // Enviar correo de verificación
+                            user.sendEmailVerification()
+                                .then(() => {
+                                    console.log('Correo de verificación enviado.');
+                                })
+                                .catch((error) => {
+                                    console.error('Error al enviar el correo de verificación:', error);
+                                });
+                        })
+                        .catch((error) => {
+                            console.error('Error al crear el usuario:', error);
+                        });
                     return userCredential.user.uid;
                 } catch (error) {
                     console.error("Error en autenticación:", error.message);
@@ -58,21 +86,25 @@
 
             signOut: async function () {
                 await firebase.auth().signOut();
-            }
-        };
-        window.localStorageHelper = {
-            setItem: function (key, value) {
-                sessionStorage.setItem(key, value);
             },
-            getItem: function (key) {
-                return sessionStorage.getItem(key);
-            },
-            removeItem: function (key) {
-                sessionStorage.removeItem(key);
-            }
-        };
-    </script>
 
+            loginWithGoogle: async function () {
+            var provider = new firebase.auth.GoogleAuthProvider();
+
+            try {
+                const result = await firebase.auth().signInWithPopup(provider);
+                const user = result.user;
+                console.log("Usuario autenticado:", user);
+                return user;
+            } catch (error) {
+                console.error("Error durante el inicio de sesión:", error);
+                return null;
+            }
+        }
+        };
+        
+    </script>
+    <script src="js/sessionStorage.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
 </body>

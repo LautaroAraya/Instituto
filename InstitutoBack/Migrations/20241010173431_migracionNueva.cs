@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InstitutoBack.Migrations
 {
     /// <inheritdoc />
-    public partial class inicioproyecto : Migration
+    public partial class migracionNueva : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -95,8 +95,8 @@ namespace InstitutoBack.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Desde = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Hasta = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     EsRecreo = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     Eliminado = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
@@ -216,6 +216,8 @@ namespace InstitutoBack.Migrations
                     User = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Password = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     TipoUsuario = table.Column<int>(type: "int", nullable: false),
                     AlumnoId = table.Column<int>(type: "int", nullable: true),
@@ -541,48 +543,48 @@ namespace InstitutoBack.Migrations
 
             migrationBuilder.InsertData(
                 table: "horas",
-                columns: new[] { "Id", "Eliminado", "EsRecreo", "Nombre" },
+                columns: new[] { "Id", "Desde", "Eliminado", "EsRecreo", "Hasta" },
                 values: new object[,]
                 {
-                    { 1, false, false, "08:00 a 08:40" },
-                    { 2, false, false, "08:40 a 09:20" },
-                    { 3, false, false, "09:20 a 10:00" },
-                    { 4, false, false, "10:00 a 10:40" },
-                    { 5, false, true, "10:00 a 10:10" },
-                    { 6, false, false, "10:10 a 10:50" },
-                    { 7, false, true, "10:40 a 10:50" },
-                    { 8, false, false, "10:50 a 11:30" },
-                    { 9, false, false, "11:10 a 11:50" },
-                    { 10, false, false, "11:30 a 12:10" },
-                    { 11, false, false, "11:50 a 12:30" },
-                    { 12, false, false, "12:10 a 12:50" },
-                    { 13, false, false, "12:30 a 13:10" },
-                    { 14, false, false, "12:50 a 13:30" },
-                    { 15, false, false, "13:10 a 13:50" },
-                    { 16, false, false, "13:50 a 14:30" },
-                    { 17, false, false, "14:30 a 15:10" },
-                    { 18, false, false, "15:10 a 15:50" },
-                    { 19, false, true, "15:50 a 16:00" },
-                    { 20, false, true, "15:50 a 16:10" },
-                    { 21, false, false, "16:00 a 16:40" },
-                    { 22, false, false, "16:10 a 16:50" },
-                    { 23, false, false, "16:40 a 17:20" },
-                    { 24, false, false, "16:50 a 17:30" },
-                    { 25, false, false, "17:20 a 18:00" },
-                    { 26, false, false, "17:30 a 18:10" },
-                    { 27, false, false, "18:00 a 18:40" },
-                    { 28, false, false, "18:10 a 18:50" },
-                    { 29, false, false, "18:40 a 19:20" },
-                    { 30, false, false, "18:50 a 19:30" },
-                    { 31, false, false, "19:00 a 19:40" },
-                    { 32, false, false, "19:20 a 20:00" },
-                    { 33, false, true, "19:30 a 19:40" },
-                    { 34, false, false, "19:40 a 20:20" },
-                    { 35, false, false, "20:00 a 20:40" },
-                    { 36, false, false, "20:20 a 21:00" },
-                    { 37, false, false, "20:40 a 21:20" },
-                    { 38, false, false, "21:00 a 21:40" },
-                    { 39, false, false, "21:20 a 22:00" }
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 23, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 24, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 25, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 26, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 28, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 37, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 38, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 39, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -628,7 +630,7 @@ namespace InstitutoBack.Migrations
             migrationBuilder.InsertData(
                 table: "inscripciones",
                 columns: new[] { "Id", "AlumnoId", "CarreraId", "CicloLectivoId", "Eliminado", "Fecha" },
-                values: new object[] { 1, 1, 1, 1, false, new DateTime(2024, 8, 29, 10, 41, 16, 543, DateTimeKind.Local).AddTicks(5313) });
+                values: new object[] { 1, 1, 1, 1, false, new DateTime(2024, 10, 10, 14, 34, 30, 493, DateTimeKind.Local).AddTicks(8595) });
 
             migrationBuilder.InsertData(
                 table: "inscriptoscarreras",
@@ -637,8 +639,8 @@ namespace InstitutoBack.Migrations
 
             migrationBuilder.InsertData(
                 table: "usuarios",
-                columns: new[] { "Id", "AlumnoId", "DocenteId", "Eliminado", "Email", "TipoUsuario", "User" },
-                values: new object[] { 1, null, 1, false, "admin@gmail.com", 2, "admin" });
+                columns: new[] { "Id", "AlumnoId", "DocenteId", "Eliminado", "Email", "Password", "TipoUsuario", "User" },
+                values: new object[] { 1, null, 1, false, "admin@gmail.com", "", 2, "admin" });
 
             migrationBuilder.InsertData(
                 table: "materias",
