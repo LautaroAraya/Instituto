@@ -35,12 +35,16 @@ namespace InstitutoDesktop.Views.Horarios
         private async void CargarDatosEnPantalla()
         {
             txtNombre.Text = hora.Nombre;
+            dateTimeDesde.Value = hora.Desde;
+            dateTimeHasta.Value = hora.Hasta;
             chkRecreo.Checked = hora.EsRecreo;
         }
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             hora.Nombre = txtNombre.Text;
+            hora.Desde = dateTimeDesde.Value;
+            hora.Hasta = dateTimeHasta.Value;
             hora.EsRecreo = chkRecreo.Checked;
 
             if (hora.Id == 0)

@@ -1010,52 +1010,6 @@ namespace InstitutoBack.DataContext
             modelBuilder.Entity<MesaExamen>().HasData(mesasExamen);
             modelBuilder.Entity<DetalleMesaExamen>().HasData(detallesMesaExamen);
             #endregion
-            #region datos semillas Horas
-
-
-            modelBuilder.Entity<Hora>().HasData(
-                new Hora { Id = 1, Nombre = "08:00 a 08:40", EsRecreo = false },
-            new Hora { Id = 2, Nombre = "08:40 a 09:20", EsRecreo = false },
-            new Hora { Id = 3, Nombre = "09:20 a 10:00", EsRecreo = false },
-            new Hora { Id = 4, Nombre = "10:00 a 10:40", EsRecreo = false },
-            new Hora { Id = 5, Nombre = "10:00 a 10:10", EsRecreo = true },
-            new Hora { Id = 6, Nombre = "10:10 a 10:50", EsRecreo = false },
-            new Hora { Id = 7, Nombre = "10:40 a 10:50", EsRecreo = true },
-            new Hora { Id = 8, Nombre = "10:50 a 11:30", EsRecreo = false },
-            new Hora { Id = 9, Nombre = "11:10 a 11:50", EsRecreo = false },
-            new Hora { Id = 10, Nombre = "11:30 a 12:10", EsRecreo = false },
-            new Hora { Id = 11, Nombre = "11:50 a 12:30", EsRecreo = false },
-            new Hora { Id = 12, Nombre = "12:10 a 12:50", EsRecreo = false },
-            new Hora { Id = 13, Nombre = "12:30 a 13:10", EsRecreo = false },
-            new Hora { Id = 14, Nombre = "12:50 a 13:30", EsRecreo = false },
-            new Hora { Id = 15, Nombre = "13:10 a 13:50", EsRecreo = false },
-            new Hora { Id = 16, Nombre = "13:50 a 14:30", EsRecreo = false },
-            new Hora { Id = 17, Nombre = "14:30 a 15:10", EsRecreo = false },
-            new Hora { Id = 18, Nombre = "15:10 a 15:50", EsRecreo = false },
-            new Hora { Id = 19, Nombre = "15:50 a 16:00", EsRecreo = true },
-            new Hora { Id = 20, Nombre = "15:50 a 16:10", EsRecreo = true },
-            new Hora { Id = 21, Nombre = "16:00 a 16:40", EsRecreo = false },
-            new Hora { Id = 22, Nombre = "16:10 a 16:50", EsRecreo = false },
-            new Hora { Id = 23, Nombre = "16:40 a 17:20", EsRecreo = false },
-            new Hora { Id = 24, Nombre = "16:50 a 17:30", EsRecreo = false },
-            new Hora { Id = 25, Nombre = "17:20 a 18:00", EsRecreo = false },
-            new Hora { Id = 26, Nombre = "17:30 a 18:10", EsRecreo = false },
-            new Hora { Id = 27, Nombre = "18:00 a 18:40", EsRecreo = false },
-            new Hora { Id = 28, Nombre = "18:10 a 18:50", EsRecreo = false },
-            new Hora { Id = 29, Nombre = "18:40 a 19:20", EsRecreo = false },
-            new Hora { Id = 30, Nombre = "18:50 a 19:30", EsRecreo = false },
-            new Hora { Id = 31, Nombre = "19:00 a 19:40", EsRecreo = false },
-            new Hora { Id = 32, Nombre = "19:20 a 20:00", EsRecreo = false },
-            new Hora { Id = 33, Nombre = "19:30 a 19:40", EsRecreo = true },
-            new Hora { Id = 34, Nombre = "19:40 a 20:20", EsRecreo = false },
-            new Hora { Id = 35, Nombre = "20:00 a 20:40", EsRecreo = false },
-            new Hora { Id = 36, Nombre = "20:20 a 21:00", EsRecreo = false },
-            new Hora { Id = 37, Nombre = "20:40 a 21:20", EsRecreo = false },
-            new Hora { Id = 38, Nombre = "21:00 a 21:40", EsRecreo = false },
-            new Hora { Id = 39, Nombre = "21:20 a 22:00", EsRecreo = false }
-
-                );
-            #endregion
             #region metodos datos semillas Horario DetalleHorario IntegranteHorario
             var horarioId = 1;
             var horarios = new List<Horario>();
