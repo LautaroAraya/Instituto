@@ -42,7 +42,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Segoe UI", 11F);
-            txtNombre.Location = new Point(308, 194);
+            txtNombre.Location = new Point(278, 216);
             txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
             txtNombre.ReadOnly = true;
@@ -53,7 +53,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(222, 200);
+            label1.Location = new Point(222, 106);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(57, 25);
@@ -67,7 +67,7 @@
             btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnCancelar.IconSize = 30;
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(426, 309);
+            btnCancelar.Location = new Point(444, 392);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(127, 40);
@@ -83,7 +83,7 @@
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnGuardar.IconSize = 30;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(264, 309);
+            btnGuardar.Location = new Point(222, 392);
             btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(127, 40);
@@ -95,7 +95,7 @@
             // chkRecreo
             // 
             chkRecreo.AutoSize = true;
-            chkRecreo.Location = new Point(222, 247);
+            chkRecreo.Location = new Point(321, 168);
             chkRecreo.Name = "chkRecreo";
             chkRecreo.Size = new Size(77, 24);
             chkRecreo.TabIndex = 14;
@@ -141,6 +141,45 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F);
             label3.Location = new Point(228, 116);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 25);
+            label3.TabIndex = 18;
+            label3.Text = "Hasta:";
+            // 
+            // dateTimeDesde
+            // 
+            dateTimeDesde.Format = DateTimePickerFormat.Time;
+            dateTimeDesde.Location = new Point(278, 51);
+            dateTimeDesde.Name = "dateTimeDesde";
+            dateTimeDesde.Size = new Size(135, 27);
+            dateTimeDesde.TabIndex = 15;
+            dateTimeDesde.Value = new DateTime(2024, 10, 10, 14, 53, 0, 0);
+            // 
+            // dateTimeHasta
+            // 
+            dateTimeHasta.Format = DateTimePickerFormat.Time;
+            dateTimeHasta.Location = new Point(278, 138);
+            dateTimeHasta.Name = "dateTimeHasta";
+            dateTimeHasta.Size = new Size(135, 27);
+            dateTimeHasta.TabIndex = 16;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11F);
+            label2.Location = new Point(189, 51);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 25);
+            label2.TabIndex = 17;
+            label2.Text = "Desde:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 11F);
+            label3.Location = new Point(189, 140);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(63, 25);
