@@ -36,132 +36,44 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const firebaseConfig = {
-                apiKey: "AIzaSyBmHgrN0BoHgd0ZlDqY9f_BygkzOfhuP_E",
-                authDomain: "instituto20-435114.firebaseapp.com",
-                projectId: "instituto20-435114",
-                storageBucket: "instituto20-435114.appspot.com",
-                messagingSenderId: "243005933117",
-                appId: "1:243005933117:web:5250836b30e808ab008c54"
-            };
-            firebase.initializeApp(firebaseConfig);
-        });
-            console.log(firebase);
-            window.firebaseAuth = {
-                signInWithEmailPassword: async function (email, password, rememberPassword) {
-                    try {
-                        if (rememberPassword) {
-                            await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-                        } else {
-                            await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
-                        }
-                        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-                        return { Error: "", User: userCredential.user };
-                    } catch (error) {
-                        return { Error: error.message, User: null };
-                    }
-                },
-                createUserWithEmailAndPassword: async function (email, password, displayName) {
-                    try {
-                        const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password)
-                            .then((userCredential) => {
-                                // El usuario se ha creado correctamente
-                                const user = userCredential.user;
-
-                                // Actualizar el perfil del usuario
-                                user.updateProfile({
-                                    displayName: displayName
-                                });
-                                // Enviar correo de verificación
-                                user.sendEmailVerification()
-                                    .then(() => {
-                                        console.log('Correo de verificación enviado.');
-                                    })
-                                    .catch((error) => {
-                                        console.error('Error al enviar el correo de verificación:', error);
-                                    });
-                            })
-                            .catch((error) => {
-                                console.error('Error al crear el usuario:', error);
-                            });
-                        return userCredential.user.uid;
-                    } catch (error) {
-                        console.error("Error en autenticación:", error.message);
-                        return null;
-                    }
-                },
-                signOut: async function () {
-                    await firebase.auth().signOut();
-                },
-                
-                getUserFirebase: async function () {
-                    return new Promise((resolve, reject) => {
-                        firebase.auth().onAuthStateChanged((user) => {
-                            if (user) {
-                                provider = user.providerData[0].providerId;
-                                console.log(provider);
-
-                                if (provider == "facebook.com" || provider == "google.com")
-                                {
-                                    user._delegate.emailVerified = true;
-                                }
-                                resolve(user);
-                            } else {
-                                resolve(null);
-                            }
-                        });
-                    });
-                    
-                    
-                },
-                sendPasswordResetEmail: async function (email) {
-                    try {
-                        await firebase.auth().sendPasswordResetEmail(email);
-                        return true;
-                    } catch (error) {
-                        console.error("Error al enviar el correo de restablecimiento de contraseña:", error);
-                        return false;
-                    }
-                },
-                loginWithGoogle: async function () {
-                    var provider = new firebase.auth.GoogleAuthProvider();
-                    provider.setCustomParameters({
-                        prompt: 'select_account' // Forzar selección de cuenta
-                    });
-                    await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
-                    try {
-                        const result = await firebase.auth().signInWithPopup(provider);
-                        const user = result.user;
-                        console.log(user);
-                        return user;
-                    } catch (error) {
-                        console.error("Error durante el inicio de sesión:", error);
-                        return null;
-                    }
-                },
-                loginWithFacebook: async function () {
-                    var provider = new firebase.auth.FacebookAuthProvider();
-                    provider.setCustomParameters({
-                        prompt: 'select_account' // Forzar selección de cuenta
-                    });
-                    await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
-                    try {
-                        const result = await firebase.auth().signInWithPopup(provider);
-                        const user = result.user;
-                        console.log(user);   
-                        return user;
-                    } catch (error) {
-                        console.error("Error durante el inicio de sesión:", error);
-                        return null;
-                    }
+        const firebaseConfig = {
+            apiKey: "AIzaSyBosVc8LN9yjnEbxF66g8UhbGsxu3so9H8",
+            authDomain: "instituto20.firebaseapp.com",
+            projectId: "instituto20",
+            storageBucket: "instituto20.appspot.com",
+            messagingSenderId: "94204742950",
+            appId: "1:94204742950:web:113d55ed727a1894b545e7"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log(firebase);
+        window.firebaseAuth = {
+            signInWithEmailPassword: async function (email, password) {
+                try {
+                    const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+                    return userCredential.user.uid;
+                } catch (error) {
+                    console.error("Error en autenticación:", error.message);
+                    return null;
                 }
+            },
 
-            };
-
+            signOut: async function () {
+                await firebase.auth().signOut();
+            }
+        };
+        window.localStorageHelper = {
+            setItem: function (key, value) {
+                sessionStorage.setItem(key, value);
+            },
+            getItem: function (key) {
+                return sessionStorage.getItem(key);
+            },
+            removeItem: function (key) {
+                sessionStorage.removeItem(key);
+            }
+        };
     </script>
+
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
 </body>

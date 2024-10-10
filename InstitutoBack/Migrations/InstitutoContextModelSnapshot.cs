@@ -288,7 +288,11 @@ namespace InstitutoBack.Migrations
                         });
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.Commons.Aula", b =>
+=======
+            modelBuilder.Entity("InstitutoServices.Models.Commons.Carrera", b =>
+>>>>>>> Mejoras en autenticación y limpieza de código
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -360,6 +364,7 @@ namespace InstitutoBack.Migrations
                         {
                             Id = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             Nombre = "Aula 9"
                         },
                         new
@@ -413,6 +418,14 @@ namespace InstitutoBack.Migrations
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.Commons.Carrera", b =>
+=======
+                            Nombre = "Licenciatura en Cooperativismo y Mutualismo",
+                            Sigla = "LCM"
+                        });
+                });
+
+            modelBuilder.Entity("InstitutoServices.Models.Commons.Docente", b =>
+>>>>>>> Mejoras en autenticación y limpieza de código
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -424,15 +437,19 @@ namespace InstitutoBack.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Nombre")
+<<<<<<< HEAD
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Sigla")
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.ToTable("carreras");
 
                     b.HasData(
@@ -518,6 +535,8 @@ namespace InstitutoBack.Migrations
 
                     b.HasKey("Id");
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.ToTable("docentes");
 
                     b.HasData(
@@ -1008,6 +1027,7 @@ namespace InstitutoBack.Migrations
                         });
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.Commons.JefaturaSeccion", b =>
                 {
                     b.Property<int>("Id")
@@ -1034,6 +1054,8 @@ namespace InstitutoBack.Migrations
                     b.ToTable("jefaturassecciones");
                 });
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
             modelBuilder.Entity("InstitutoServices.Models.Commons.Materia", b =>
                 {
                     b.Property<int>("Id")
@@ -1048,9 +1070,12 @@ namespace InstitutoBack.Migrations
                     b.Property<bool>("Eliminado")
                         .HasColumnType("tinyint(1)");
 
+<<<<<<< HEAD
                     b.Property<bool>("EsRecreo")
                         .HasColumnType("tinyint(1)");
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -1067,7 +1092,10 @@ namespace InstitutoBack.Migrations
                             Id = 1,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Pedagogía"
                         },
                         new
@@ -1075,7 +1103,10 @@ namespace InstitutoBack.Migrations
                             Id = 2,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "UCCV Sociología"
                         },
                         new
@@ -1083,7 +1114,10 @@ namespace InstitutoBack.Migrations
                             Id = 3,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración General"
                         },
                         new
@@ -1091,7 +1125,10 @@ namespace InstitutoBack.Migrations
                             Id = 4,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía I"
                         },
                         new
@@ -1099,7 +1136,10 @@ namespace InstitutoBack.Migrations
                             Id = 5,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Geografía Económica"
                         },
                         new
@@ -1107,7 +1147,10 @@ namespace InstitutoBack.Migrations
                             Id = 6,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia Económica"
                         },
                         new
@@ -1115,7 +1158,10 @@ namespace InstitutoBack.Migrations
                             Id = 7,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Construcción de Ciudadanía"
                         },
                         new
@@ -1123,7 +1169,10 @@ namespace InstitutoBack.Migrations
                             Id = 8,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información Contable I"
                         },
                         new
@@ -1131,7 +1180,10 @@ namespace InstitutoBack.Migrations
                             Id = 9,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática"
                         },
                         new
@@ -1139,7 +1191,10 @@ namespace InstitutoBack.Migrations
                             Id = 10,
                             AnioCarreraId = 21,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente I"
                         },
                         new
@@ -1147,7 +1202,10 @@ namespace InstitutoBack.Migrations
                             Id = 11,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Instituciones Educativas"
                         },
                         new
@@ -1155,7 +1213,10 @@ namespace InstitutoBack.Migrations
                             Id = 12,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica y Curriculum"
                         },
                         new
@@ -1163,7 +1224,10 @@ namespace InstitutoBack.Migrations
                             Id = 13,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Psicología y Educación"
                         },
                         new
@@ -1171,7 +1235,10 @@ namespace InstitutoBack.Migrations
                             Id = 14,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía II"
                         },
                         new
@@ -1179,7 +1246,10 @@ namespace InstitutoBack.Migrations
                             Id = 15,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información Contable II"
                         },
                         new
@@ -1187,7 +1257,10 @@ namespace InstitutoBack.Migrations
                             Id = 16,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho I"
                         },
                         new
@@ -1195,7 +1268,10 @@ namespace InstitutoBack.Migrations
                             Id = 17,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Estadística Aplicada"
                         },
                         new
@@ -1203,7 +1279,10 @@ namespace InstitutoBack.Migrations
                             Id = 18,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica de la Economía I"
                         },
                         new
@@ -1211,7 +1290,10 @@ namespace InstitutoBack.Migrations
                             Id = 19,
                             AnioCarreraId = 22,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente II"
                         },
                         new
@@ -1219,7 +1301,10 @@ namespace InstitutoBack.Migrations
                             Id = 20,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia y Política de la Educación Argentina"
                         },
                         new
@@ -1227,7 +1312,10 @@ namespace InstitutoBack.Migrations
                             Id = 21,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Filosofía"
                         },
                         new
@@ -1235,7 +1323,10 @@ namespace InstitutoBack.Migrations
                             Id = 22,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Metodología de la Investigación"
                         },
                         new
@@ -1243,7 +1334,10 @@ namespace InstitutoBack.Migrations
                             Id = 23,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía III"
                         },
                         new
@@ -1251,7 +1345,10 @@ namespace InstitutoBack.Migrations
                             Id = 24,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Finanzas Públicas"
                         },
                         new
@@ -1259,7 +1356,10 @@ namespace InstitutoBack.Migrations
                             Id = 25,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho II"
                         },
                         new
@@ -1267,7 +1367,10 @@ namespace InstitutoBack.Migrations
                             Id = 26,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujetos de la Educación Secundaria"
                         },
                         new
@@ -1275,7 +1378,10 @@ namespace InstitutoBack.Migrations
                             Id = 27,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente III"
                         },
                         new
@@ -1283,7 +1389,10 @@ namespace InstitutoBack.Migrations
                             Id = 28,
                             AnioCarreraId = 23,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción de los Recursos Didácticos I"
                         },
                         new
@@ -1291,7 +1400,10 @@ namespace InstitutoBack.Migrations
                             Id = 29,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Trabajo Docente"
                         },
                         new
@@ -1299,7 +1411,10 @@ namespace InstitutoBack.Migrations
                             Id = 30,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Educación Sexual Integral"
                         },
                         new
@@ -1307,7 +1422,10 @@ namespace InstitutoBack.Migrations
                             Id = 31,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "UCCV Comunicación Social"
                         },
                         new
@@ -1315,7 +1433,10 @@ namespace InstitutoBack.Migrations
                             Id = 32,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía Social y Sostenible"
                         },
                         new
@@ -1323,7 +1444,10 @@ namespace InstitutoBack.Migrations
                             Id = 33,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía Argentina Latinoamericana e Internacional"
                         },
                         new
@@ -1331,7 +1455,10 @@ namespace InstitutoBack.Migrations
                             Id = 34,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Prácticas de Investigación"
                         },
                         new
@@ -1339,7 +1466,10 @@ namespace InstitutoBack.Migrations
                             Id = 35,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente IV (Residencia)"
                         },
                         new
@@ -1347,7 +1477,10 @@ namespace InstitutoBack.Migrations
                             Id = 36,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción de los Recursos Didácticos II"
                         },
                         new
@@ -1355,7 +1488,10 @@ namespace InstitutoBack.Migrations
                             Id = 37,
                             AnioCarreraId = 24,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de Definición Institucional"
                         },
                         new
@@ -1363,7 +1499,10 @@ namespace InstitutoBack.Migrations
                             Id = 38,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Pedagogía"
                         },
                         new
@@ -1371,7 +1510,10 @@ namespace InstitutoBack.Migrations
                             Id = 39,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Movimiento y Cuerpo"
                         },
                         new
@@ -1379,7 +1521,10 @@ namespace InstitutoBack.Migrations
                             Id = 40,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente I: Escenarios Educativos"
                         },
                         new
@@ -1387,7 +1532,10 @@ namespace InstitutoBack.Migrations
                             Id = 41,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Introducción a la Tecnología"
                         },
                         new
@@ -1395,7 +1543,10 @@ namespace InstitutoBack.Migrations
                             Id = 42,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia de la Tecnología"
                         },
                         new
@@ -1403,7 +1554,10 @@ namespace InstitutoBack.Migrations
                             Id = 43,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Diseño y Producción de la Tecnología I"
                         },
                         new
@@ -1411,7 +1565,10 @@ namespace InstitutoBack.Migrations
                             Id = 44,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática"
                         },
                         new
@@ -1419,7 +1576,10 @@ namespace InstitutoBack.Migrations
                             Id = 45,
                             AnioCarreraId = 25,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Física"
                         },
                         new
@@ -1427,7 +1587,10 @@ namespace InstitutoBack.Migrations
                             Id = 46,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Psicología de la Educación"
                         },
                         new
@@ -1435,7 +1598,10 @@ namespace InstitutoBack.Migrations
                             Id = 47,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica y Curriculum"
                         },
                         new
@@ -1443,7 +1609,10 @@ namespace InstitutoBack.Migrations
                             Id = 48,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Instituciones Educativas"
                         },
                         new
@@ -1451,7 +1620,10 @@ namespace InstitutoBack.Migrations
                             Id = 49,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente II: La Institución Escolar"
                         },
                         new
@@ -1459,7 +1631,10 @@ namespace InstitutoBack.Migrations
                             Id = 50,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujetos de la Educación I"
                         },
                         new
@@ -1467,7 +1642,10 @@ namespace InstitutoBack.Migrations
                             Id = 51,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Tics para la Enseñanza"
                         },
                         new
@@ -1475,7 +1653,10 @@ namespace InstitutoBack.Migrations
                             Id = 52,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Procesos Productivos"
                         },
                         new
@@ -1483,7 +1664,10 @@ namespace InstitutoBack.Migrations
                             Id = 53,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Diseño y Producción Tecnológica II"
                         },
                         new
@@ -1491,7 +1675,10 @@ namespace InstitutoBack.Migrations
                             Id = 54,
                             AnioCarreraId = 26,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica Específica I"
                         },
                         new
@@ -1499,7 +1686,10 @@ namespace InstitutoBack.Migrations
                             Id = 55,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Filosofía y Educación"
                         },
                         new
@@ -1507,7 +1697,10 @@ namespace InstitutoBack.Migrations
                             Id = 56,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia Social de la Educación"
                         },
                         new
@@ -1515,7 +1708,10 @@ namespace InstitutoBack.Migrations
                             Id = 57,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Metodología de la Investigación"
                         },
                         new
@@ -1523,7 +1719,10 @@ namespace InstitutoBack.Migrations
                             Id = 58,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente III: La Clase"
                         },
                         new
@@ -1531,7 +1730,10 @@ namespace InstitutoBack.Migrations
                             Id = 59,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujetos de la Educación II"
                         },
                         new
@@ -1539,7 +1741,10 @@ namespace InstitutoBack.Migrations
                             Id = 60,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Materiales"
                         },
                         new
@@ -1547,7 +1752,10 @@ namespace InstitutoBack.Migrations
                             Id = 61,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Química"
                         },
                         new
@@ -1555,7 +1763,10 @@ namespace InstitutoBack.Migrations
                             Id = 62,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Procesos de Control"
                         },
                         new
@@ -1563,7 +1774,10 @@ namespace InstitutoBack.Migrations
                             Id = 63,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Tecnologías Regionales"
                         },
                         new
@@ -1571,7 +1785,10 @@ namespace InstitutoBack.Migrations
                             Id = 64,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Diseño y Producción Tecnológica III"
                         },
                         new
@@ -1579,7 +1796,10 @@ namespace InstitutoBack.Migrations
                             Id = 65,
                             AnioCarreraId = 27,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica Específica II"
                         },
                         new
@@ -1587,7 +1807,10 @@ namespace InstitutoBack.Migrations
                             Id = 66,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Trabajo Docente"
                         },
                         new
@@ -1595,7 +1818,10 @@ namespace InstitutoBack.Migrations
                             Id = 67,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Educación Sexual Integral"
                         },
                         new
@@ -1603,7 +1829,10 @@ namespace InstitutoBack.Migrations
                             Id = 68,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidades de Definición Institucional I"
                         },
                         new
@@ -1611,7 +1840,10 @@ namespace InstitutoBack.Migrations
                             Id = 69,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidades de Definición Institucional II"
                         },
                         new
@@ -1619,7 +1851,10 @@ namespace InstitutoBack.Migrations
                             Id = 70,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Prácticas de Investigación"
                         },
                         new
@@ -1627,7 +1862,10 @@ namespace InstitutoBack.Migrations
                             Id = 71,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente IV: El Rol Docente y su Práctica"
                         },
                         new
@@ -1635,7 +1873,10 @@ namespace InstitutoBack.Migrations
                             Id = 72,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Biotecnología"
                         },
                         new
@@ -1643,7 +1884,10 @@ namespace InstitutoBack.Migrations
                             Id = 73,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Procesos de Comunicación"
                         },
                         new
@@ -1651,7 +1895,10 @@ namespace InstitutoBack.Migrations
                             Id = 74,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Sociotécnicas"
                         },
                         new
@@ -1659,7 +1906,10 @@ namespace InstitutoBack.Migrations
                             Id = 75,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Diseño y Producción Tecnológica IV"
                         },
                         new
@@ -1667,7 +1917,10 @@ namespace InstitutoBack.Migrations
                             Id = 76,
                             AnioCarreraId = 28,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Taller de Producción Didáctica"
                         },
                         new
@@ -1675,7 +1928,10 @@ namespace InstitutoBack.Migrations
                             Id = 77,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Comunicación (1° cuat.)"
                         },
                         new
@@ -1683,7 +1939,10 @@ namespace InstitutoBack.Migrations
                             Id = 78,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de definición Institucional (2° cuat.)"
                         },
                         new
@@ -1691,7 +1950,10 @@ namespace InstitutoBack.Migrations
                             Id = 79,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática"
                         },
                         new
@@ -1699,7 +1961,10 @@ namespace InstitutoBack.Migrations
                             Id = 80,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Inglés Técnico I"
                         },
                         new
@@ -1707,7 +1972,10 @@ namespace InstitutoBack.Migrations
                             Id = 81,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración"
                         },
                         new
@@ -1715,7 +1983,10 @@ namespace InstitutoBack.Migrations
                             Id = 82,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Tecnología de la Información"
                         },
                         new
@@ -1723,7 +1994,10 @@ namespace InstitutoBack.Migrations
                             Id = 83,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Lógica y Estructura de Datos"
                         },
                         new
@@ -1731,7 +2005,10 @@ namespace InstitutoBack.Migrations
                             Id = 84,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ingeniería de Software I"
                         },
                         new
@@ -1739,7 +2016,10 @@ namespace InstitutoBack.Migrations
                             Id = 85,
                             AnioCarreraId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistemas Operativos"
                         },
                         new
@@ -1747,7 +2027,10 @@ namespace InstitutoBack.Migrations
                             Id = 86,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Socio Contemporáneas (1° cuat.)"
                         },
                         new
@@ -1755,7 +2038,10 @@ namespace InstitutoBack.Migrations
                             Id = 87,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de definición Institucional (2° cuat.)"
                         },
                         new
@@ -1763,7 +2049,10 @@ namespace InstitutoBack.Migrations
                             Id = 88,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Inglés Técnico II"
                         },
                         new
@@ -1771,7 +2060,10 @@ namespace InstitutoBack.Migrations
                             Id = 89,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Innovación y Desarrollo Emprendedor"
                         },
                         new
@@ -1779,7 +2071,10 @@ namespace InstitutoBack.Migrations
                             Id = 90,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Estadística"
                         },
                         new
@@ -1787,7 +2082,10 @@ namespace InstitutoBack.Migrations
                             Id = 91,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Programación I"
                         },
                         new
@@ -1795,7 +2093,10 @@ namespace InstitutoBack.Migrations
                             Id = 92,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ingeniería de Software II"
                         },
                         new
@@ -1803,7 +2104,10 @@ namespace InstitutoBack.Migrations
                             Id = 93,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Base de Datos I"
                         },
                         new
@@ -1811,7 +2115,10 @@ namespace InstitutoBack.Migrations
                             Id = 94,
                             AnioCarreraId = 2,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante I"
                         },
                         new
@@ -1819,7 +2126,10 @@ namespace InstitutoBack.Migrations
                             Id = 95,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Responsabilidad Social"
                         },
                         new
@@ -1827,7 +2137,10 @@ namespace InstitutoBack.Migrations
                             Id = 96,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho y Legislación Laboral"
                         },
                         new
@@ -1835,7 +2148,10 @@ namespace InstitutoBack.Migrations
                             Id = 97,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Redes y Comunicación"
                         },
                         new
@@ -1843,7 +2159,10 @@ namespace InstitutoBack.Migrations
                             Id = 98,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Programación II"
                         },
                         new
@@ -1851,7 +2170,10 @@ namespace InstitutoBack.Migrations
                             Id = 99,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión de Proyectos de Software"
                         },
                         new
@@ -1859,7 +2181,10 @@ namespace InstitutoBack.Migrations
                             Id = 100,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Base de Datos II"
                         },
                         new
@@ -1867,7 +2192,10 @@ namespace InstitutoBack.Migrations
                             Id = 101,
                             AnioCarreraId = 3,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante II"
                         },
                         new
@@ -1875,7 +2203,10 @@ namespace InstitutoBack.Migrations
                             Id = 102,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Comunicación"
                         },
                         new
@@ -1883,7 +2214,10 @@ namespace InstitutoBack.Migrations
                             Id = 103,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de Definición Institucional I"
                         },
                         new
@@ -1891,7 +2225,10 @@ namespace InstitutoBack.Migrations
                             Id = 104,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Salud Pública"
                         },
                         new
@@ -1899,7 +2236,10 @@ namespace InstitutoBack.Migrations
                             Id = 105,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Biología Humana I"
                         },
                         new
@@ -1907,7 +2247,10 @@ namespace InstitutoBack.Migrations
                             Id = 106,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujeto, Cultura y Sociedad"
                         },
                         new
@@ -1915,7 +2258,10 @@ namespace InstitutoBack.Migrations
                             Id = 107,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Fundamentos del Cuidado en Enfermería"
                         },
                         new
@@ -1923,7 +2269,10 @@ namespace InstitutoBack.Migrations
                             Id = 108,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Cuidados de Enfermería en la Comunidad y en la Familia"
                         },
                         new
@@ -1931,7 +2280,10 @@ namespace InstitutoBack.Migrations
                             Id = 109,
                             AnioCarreraId = 10,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante I"
                         },
                         new
@@ -1939,7 +2291,10 @@ namespace InstitutoBack.Migrations
                             Id = 110,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Socio Contemporáneas"
                         },
                         new
@@ -1947,7 +2302,10 @@ namespace InstitutoBack.Migrations
                             Id = 111,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de Definición Institucional II"
                         },
                         new
@@ -1955,7 +2313,10 @@ namespace InstitutoBack.Migrations
                             Id = 112,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Informática en Salud"
                         },
                         new
@@ -1963,7 +2324,10 @@ namespace InstitutoBack.Migrations
                             Id = 113,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujeto, Cultura y Sociedad II"
                         },
                         new
@@ -1971,7 +2335,10 @@ namespace InstitutoBack.Migrations
                             Id = 114,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Biología Humana II"
                         },
                         new
@@ -1979,7 +2346,10 @@ namespace InstitutoBack.Migrations
                             Id = 115,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Bioseguridad y Medio Ambiente en el Trabajo"
                         },
                         new
@@ -1987,7 +2357,10 @@ namespace InstitutoBack.Migrations
                             Id = 116,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Farmacología en Enfermería"
                         },
                         new
@@ -1995,7 +2368,10 @@ namespace InstitutoBack.Migrations
                             Id = 117,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Cuidados de Enfermería a los Adultos y Adultos Mayores"
                         },
                         new
@@ -2003,7 +2379,10 @@ namespace InstitutoBack.Migrations
                             Id = 118,
                             AnioCarreraId = 11,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante II"
                         },
                         new
@@ -2011,7 +2390,10 @@ namespace InstitutoBack.Migrations
                             Id = 119,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Responsabilidad Social"
                         },
                         new
@@ -2019,7 +2401,10 @@ namespace InstitutoBack.Migrations
                             Id = 120,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho y Legislación Laboral"
                         },
                         new
@@ -2027,7 +2412,10 @@ namespace InstitutoBack.Migrations
                             Id = 121,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Inglés Técnico"
                         },
                         new
@@ -2035,7 +2423,10 @@ namespace InstitutoBack.Migrations
                             Id = 122,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Organización y Gestión en Instituciones de Salud"
                         },
                         new
@@ -2043,7 +2434,10 @@ namespace InstitutoBack.Migrations
                             Id = 123,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Investigación en Enfermería"
                         },
                         new
@@ -2051,7 +2445,10 @@ namespace InstitutoBack.Migrations
                             Id = 124,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Cuidados de Enfermería en Salud Mental"
                         },
                         new
@@ -2059,7 +2456,10 @@ namespace InstitutoBack.Migrations
                             Id = 125,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Cuidados de Enfermería al Niño y al Adolescente"
                         },
                         new
@@ -2067,7 +2467,10 @@ namespace InstitutoBack.Migrations
                             Id = 126,
                             AnioCarreraId = 12,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante III"
                         },
                         new
@@ -2075,7 +2478,10 @@ namespace InstitutoBack.Migrations
                             Id = 127,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Comunicación (1º cuatr.)"
                         },
                         new
@@ -2083,7 +2489,10 @@ namespace InstitutoBack.Migrations
                             Id = 128,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de Definición Institucional (2º cuatr.)"
                         },
                         new
@@ -2091,7 +2500,10 @@ namespace InstitutoBack.Migrations
                             Id = 129,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía"
                         },
                         new
@@ -2099,7 +2511,10 @@ namespace InstitutoBack.Migrations
                             Id = 130,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática y Estadística"
                         },
                         new
@@ -2107,7 +2522,10 @@ namespace InstitutoBack.Migrations
                             Id = 131,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Contabilidad"
                         },
                         new
@@ -2115,7 +2533,10 @@ namespace InstitutoBack.Migrations
                             Id = 132,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Informática"
                         },
                         new
@@ -2123,7 +2544,10 @@ namespace InstitutoBack.Migrations
                             Id = 133,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración"
                         },
                         new
@@ -2131,7 +2555,10 @@ namespace InstitutoBack.Migrations
                             Id = 134,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión de la Producción"
                         },
                         new
@@ -2139,7 +2566,10 @@ namespace InstitutoBack.Migrations
                             Id = 135,
                             AnioCarreraId = 7,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión del Talento Humano"
                         },
                         new
@@ -2147,7 +2577,10 @@ namespace InstitutoBack.Migrations
                             Id = 136,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Contemporáneas (1º cuatr.)"
                         },
                         new
@@ -2155,7 +2588,10 @@ namespace InstitutoBack.Migrations
                             Id = 137,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de Definición Institucional (2º cuatr.)"
                         },
                         new
@@ -2163,7 +2599,10 @@ namespace InstitutoBack.Migrations
                             Id = 138,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Innovación y Desarrollo Emprendedor"
                         },
                         new
@@ -2171,7 +2610,10 @@ namespace InstitutoBack.Migrations
                             Id = 139,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Inglés Técnico"
                         },
                         new
@@ -2179,7 +2621,10 @@ namespace InstitutoBack.Migrations
                             Id = 140,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Legislación Comercial y Tributaria"
                         },
                         new
@@ -2187,7 +2632,10 @@ namespace InstitutoBack.Migrations
                             Id = 141,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión de Comercialización e Investigación Comercial"
                         },
                         new
@@ -2195,7 +2643,10 @@ namespace InstitutoBack.Migrations
                             Id = 142,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión de Costos"
                         },
                         new
@@ -2203,7 +2654,10 @@ namespace InstitutoBack.Migrations
                             Id = 143,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión Contable"
                         },
                         new
@@ -2211,7 +2665,10 @@ namespace InstitutoBack.Migrations
                             Id = 144,
                             AnioCarreraId = 8,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante I"
                         },
                         new
@@ -2219,7 +2676,10 @@ namespace InstitutoBack.Migrations
                             Id = 145,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión de Seguridad, Salud Ocupacional y Medio Ambiente"
                         },
                         new
@@ -2227,7 +2687,10 @@ namespace InstitutoBack.Migrations
                             Id = 146,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Responsabilidad Social"
                         },
                         new
@@ -2235,7 +2698,10 @@ namespace InstitutoBack.Migrations
                             Id = 147,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Legislación Laboral"
                         },
                         new
@@ -2243,7 +2709,10 @@ namespace InstitutoBack.Migrations
                             Id = 148,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Estrategia Empresarial"
                         },
                         new
@@ -2251,7 +2720,10 @@ namespace InstitutoBack.Migrations
                             Id = 149,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información para la Gestión de las Organizaciones"
                         },
                         new
@@ -2259,7 +2731,10 @@ namespace InstitutoBack.Migrations
                             Id = 150,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Gestión Financiera"
                         },
                         new
@@ -2267,7 +2742,10 @@ namespace InstitutoBack.Migrations
                             Id = 151,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Evaluación y Administración de Proyectos de Inversión"
                         },
                         new
@@ -2275,7 +2753,10 @@ namespace InstitutoBack.Migrations
                             Id = 152,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Control de Gestión"
                         },
                         new
@@ -2283,7 +2764,10 @@ namespace InstitutoBack.Migrations
                             Id = 153,
                             AnioCarreraId = 9,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Prácticas Profesionalizantes II"
                         },
                         new
@@ -2291,7 +2775,10 @@ namespace InstitutoBack.Migrations
                             Id = 154,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Comunicación (1° cuat.)"
                         },
                         new
@@ -2299,7 +2786,10 @@ namespace InstitutoBack.Migrations
                             Id = 155,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de definición Institucional (2° cuat.)"
                         },
                         new
@@ -2307,7 +2797,10 @@ namespace InstitutoBack.Migrations
                             Id = 156,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática"
                         },
                         new
@@ -2315,7 +2808,10 @@ namespace InstitutoBack.Migrations
                             Id = 157,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Física Aplicada a las Tecnologías de la Información"
                         },
                         new
@@ -2323,7 +2819,10 @@ namespace InstitutoBack.Migrations
                             Id = 158,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración"
                         },
                         new
@@ -2331,7 +2830,10 @@ namespace InstitutoBack.Migrations
                             Id = 159,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Inglés Técnico"
                         },
                         new
@@ -2339,7 +2841,10 @@ namespace InstitutoBack.Migrations
                             Id = 160,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Arquitectura de las Computadoras"
                         },
                         new
@@ -2347,7 +2852,10 @@ namespace InstitutoBack.Migrations
                             Id = 161,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Lógica y Programación"
                         },
                         new
@@ -2355,7 +2863,10 @@ namespace InstitutoBack.Migrations
                             Id = 162,
                             AnioCarreraId = 4,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Infraestructura de Redes I"
                         },
                         new
@@ -2363,7 +2874,10 @@ namespace InstitutoBack.Migrations
                             Id = 163,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Socio Contemporáneas (1° cuat.)"
                         },
                         new
@@ -2371,7 +2885,10 @@ namespace InstitutoBack.Migrations
                             Id = 164,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Unidad de definición Institucional (2° cuat.)"
                         },
                         new
@@ -2379,7 +2896,10 @@ namespace InstitutoBack.Migrations
                             Id = 165,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Innovación y Desarrollo Emprendedor"
                         },
                         new
@@ -2387,7 +2907,10 @@ namespace InstitutoBack.Migrations
                             Id = 166,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Estadística"
                         },
                         new
@@ -2395,7 +2918,10 @@ namespace InstitutoBack.Migrations
                             Id = 167,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistemas Operativos"
                         },
                         new
@@ -2403,7 +2929,10 @@ namespace InstitutoBack.Migrations
                             Id = 168,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Algoritmos y Estructuras de Datos"
                         },
                         new
@@ -2411,7 +2940,10 @@ namespace InstitutoBack.Migrations
                             Id = 169,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Base de Datos"
                         },
                         new
@@ -2419,7 +2951,10 @@ namespace InstitutoBack.Migrations
                             Id = 170,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Infraestructura de Redes II"
                         },
                         new
@@ -2427,7 +2962,10 @@ namespace InstitutoBack.Migrations
                             Id = 171,
                             AnioCarreraId = 5,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante I"
                         },
                         new
@@ -2435,7 +2973,10 @@ namespace InstitutoBack.Migrations
                             Id = 172,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Responsabilidad Social"
                         },
                         new
@@ -2443,7 +2984,10 @@ namespace InstitutoBack.Migrations
                             Id = 173,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho y Legislación Laboral"
                         },
                         new
@@ -2451,7 +2995,10 @@ namespace InstitutoBack.Migrations
                             Id = 174,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración de Base de Datos"
                         },
                         new
@@ -2459,7 +3006,10 @@ namespace InstitutoBack.Migrations
                             Id = 175,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Integridad y Migración de Datos"
                         },
                         new
@@ -2467,7 +3017,10 @@ namespace InstitutoBack.Migrations
                             Id = 176,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Seguridad de los Sistemas"
                         },
                         new
@@ -2475,7 +3028,10 @@ namespace InstitutoBack.Migrations
                             Id = 177,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración de Sistemas Operativos y Redes"
                         },
                         new
@@ -2483,7 +3039,10 @@ namespace InstitutoBack.Migrations
                             Id = 178,
                             AnioCarreraId = 6,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Profesionalizante II"
                         },
                         new
@@ -2491,7 +3050,10 @@ namespace InstitutoBack.Migrations
                             Id = 179,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Psicología y Educación"
                         },
                         new
@@ -2499,7 +3061,10 @@ namespace InstitutoBack.Migrations
                             Id = 180,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Pedagogía"
                         },
                         new
@@ -2507,7 +3072,10 @@ namespace InstitutoBack.Migrations
                             Id = 181,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sociología de la Educación"
                         },
                         new
@@ -2515,7 +3083,10 @@ namespace InstitutoBack.Migrations
                             Id = 182,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia Argentina y Latinoamericana (1º cuatr.)"
                         },
                         new
@@ -2523,7 +3094,10 @@ namespace InstitutoBack.Migrations
                             Id = 183,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Movimiento y Cuerpo I"
                         },
                         new
@@ -2531,7 +3105,10 @@ namespace InstitutoBack.Migrations
                             Id = 184,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Taller de Práctica I"
                         },
                         new
@@ -2539,7 +3116,10 @@ namespace InstitutoBack.Migrations
                             Id = 185,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Contemporáneas de la Educación Inicial I"
                         },
                         new
@@ -2547,7 +3127,10 @@ namespace InstitutoBack.Migrations
                             Id = 186,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Comunicación y Expresión Oral y Escrita"
                         },
                         new
@@ -2555,7 +3138,10 @@ namespace InstitutoBack.Migrations
                             Id = 187,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Resolución de Problemas y Creatividad (1º cuatr.)"
                         },
                         new
@@ -2563,7 +3149,10 @@ namespace InstitutoBack.Migrations
                             Id = 188,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ambiente y Sociedad (2º cuatr.)"
                         },
                         new
@@ -2571,7 +3160,10 @@ namespace InstitutoBack.Migrations
                             Id = 189,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Área Estético-Expresiva I"
                         },
                         new
@@ -2579,7 +3171,10 @@ namespace InstitutoBack.Migrations
                             Id = 190,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Itinerarios por el Mundo de la Cultura"
                         },
                         new
@@ -2587,7 +3182,10 @@ namespace InstitutoBack.Migrations
                             Id = 191,
                             AnioCarreraId = 17,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción Pedagógica"
                         },
                         new
@@ -2595,7 +3193,10 @@ namespace InstitutoBack.Migrations
                             Id = 192,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica General"
                         },
                         new
@@ -2603,7 +3204,10 @@ namespace InstitutoBack.Migrations
                             Id = 193,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Filosofía de la Educación (1º cuatr.)"
                         },
                         new
@@ -2611,7 +3215,10 @@ namespace InstitutoBack.Migrations
                             Id = 194,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Conocimiento y Educación (2º cuatr.)"
                         },
                         new
@@ -2619,7 +3226,10 @@ namespace InstitutoBack.Migrations
                             Id = 195,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Movimiento y Cuerpo II"
                         },
                         new
@@ -2627,7 +3237,10 @@ namespace InstitutoBack.Migrations
                             Id = 196,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Taller de Práctica II: Seminario de lo Grupal y los Grupos de Aprendizaje"
                         },
                         new
@@ -2635,7 +3248,10 @@ namespace InstitutoBack.Migrations
                             Id = 197,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujeto de la Educación Inicial"
                         },
                         new
@@ -2643,7 +3259,10 @@ namespace InstitutoBack.Migrations
                             Id = 198,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica de Educación Inicial I"
                         },
                         new
@@ -2651,7 +3270,10 @@ namespace InstitutoBack.Migrations
                             Id = 199,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática y su Didáctica I"
                         },
                         new
@@ -2659,7 +3281,10 @@ namespace InstitutoBack.Migrations
                             Id = 200,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Literatura y su Didáctica"
                         },
                         new
@@ -2667,7 +3292,10 @@ namespace InstitutoBack.Migrations
                             Id = 201,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ciencias Naturales y su Didáctica"
                         },
                         new
@@ -2675,7 +3303,10 @@ namespace InstitutoBack.Migrations
                             Id = 202,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Itinerarios por el Mundo de la Cultura"
                         },
                         new
@@ -2683,7 +3314,10 @@ namespace InstitutoBack.Migrations
                             Id = 203,
                             AnioCarreraId = 18,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción Pedagógica"
                         },
                         new
@@ -2691,7 +3325,10 @@ namespace InstitutoBack.Migrations
                             Id = 204,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Tecnologías de la Información y de la Comunicación"
                         },
                         new
@@ -2699,7 +3336,10 @@ namespace InstitutoBack.Migrations
                             Id = 205,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia Social de la Educación y Política Educativa Argentina"
                         },
                         new
@@ -2707,7 +3347,10 @@ namespace InstitutoBack.Migrations
                             Id = 206,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Trayecto de Práctica III: Seminario de Instituciones Educativas"
                         },
                         new
@@ -2715,7 +3358,10 @@ namespace InstitutoBack.Migrations
                             Id = 207,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática y su Didáctica II"
                         },
                         new
@@ -2723,7 +3369,10 @@ namespace InstitutoBack.Migrations
                             Id = 208,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Lengua y su Didáctica (1º cuatr.)"
                         },
                         new
@@ -2731,7 +3380,10 @@ namespace InstitutoBack.Migrations
                             Id = 209,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Alfabetización Inicial (2º cuatr.)"
                         },
                         new
@@ -2739,7 +3391,10 @@ namespace InstitutoBack.Migrations
                             Id = 210,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ciencias Sociales y su Didáctica"
                         },
                         new
@@ -2747,7 +3402,10 @@ namespace InstitutoBack.Migrations
                             Id = 211,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Área Estético-Expresiva II"
                         },
                         new
@@ -2755,7 +3413,10 @@ namespace InstitutoBack.Migrations
                             Id = 212,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Problemáticas Contemporáneas de la Educación Inicial II (1º cuatr.)"
                         },
                         new
@@ -2763,7 +3424,10 @@ namespace InstitutoBack.Migrations
                             Id = 213,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica de la Educación Inicial II (2º cuatr.)"
                         },
                         new
@@ -2771,7 +3435,10 @@ namespace InstitutoBack.Migrations
                             Id = 214,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Espacios de Definición Institucional (1º cuatr.)"
                         },
                         new
@@ -2779,7 +3446,10 @@ namespace InstitutoBack.Migrations
                             Id = 215,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Espacios de Definición Institucional (2º cuatr.)"
                         },
                         new
@@ -2787,7 +3457,10 @@ namespace InstitutoBack.Migrations
                             Id = 216,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Itinerarios por el Mundo de la Cultura"
                         },
                         new
@@ -2795,7 +3468,10 @@ namespace InstitutoBack.Migrations
                             Id = 217,
                             AnioCarreraId = 19,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción Pedagógica"
                         },
                         new
@@ -2803,7 +3479,10 @@ namespace InstitutoBack.Migrations
                             Id = 218,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética, Trabajo Docente, Derechos Humanos y Ciudadanos"
                         },
                         new
@@ -2811,7 +3490,10 @@ namespace InstitutoBack.Migrations
                             Id = 219,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Taller de Práctica IV"
                         },
                         new
@@ -2819,7 +3501,10 @@ namespace InstitutoBack.Migrations
                             Id = 220,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ateneo: (Matemática- Ambiente y Sociedad (Ciencias Naturales- Ciencias Sociales) Lengua y Literatura- Formación Ética y Ciudadana)"
                         },
                         new
@@ -2827,7 +3512,10 @@ namespace InstitutoBack.Migrations
                             Id = 221,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sexualidad Humana y Educación (1º cuatr.)"
                         },
                         new
@@ -2835,7 +3523,10 @@ namespace InstitutoBack.Migrations
                             Id = 222,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Itinerarios por el Mundo de la Cultura"
                         },
                         new
@@ -2843,7 +3534,10 @@ namespace InstitutoBack.Migrations
                             Id = 223,
                             AnioCarreraId = 20,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción Pedagógica"
                         },
                         new
@@ -2851,7 +3545,10 @@ namespace InstitutoBack.Migrations
                             Id = 224,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Pedagogía"
                         },
                         new
@@ -2859,7 +3556,10 @@ namespace InstitutoBack.Migrations
                             Id = 225,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "UCCV Sociología"
                         },
                         new
@@ -2867,7 +3567,10 @@ namespace InstitutoBack.Migrations
                             Id = 226,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración General"
                         },
                         new
@@ -2875,7 +3578,10 @@ namespace InstitutoBack.Migrations
                             Id = 227,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración I"
                         },
                         new
@@ -2883,7 +3589,10 @@ namespace InstitutoBack.Migrations
                             Id = 228,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información Contable I"
                         },
                         new
@@ -2891,7 +3600,10 @@ namespace InstitutoBack.Migrations
                             Id = 229,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Construcción de Ciudadanía"
                         },
                         new
@@ -2899,7 +3611,10 @@ namespace InstitutoBack.Migrations
                             Id = 230,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia Económica"
                         },
                         new
@@ -2907,7 +3622,10 @@ namespace InstitutoBack.Migrations
                             Id = 231,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Matemática"
                         },
                         new
@@ -2915,7 +3633,10 @@ namespace InstitutoBack.Migrations
                             Id = 232,
                             AnioCarreraId = 13,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente I"
                         },
                         new
@@ -2923,7 +3644,10 @@ namespace InstitutoBack.Migrations
                             Id = 233,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Instituciones Educativas"
                         },
                         new
@@ -2931,7 +3655,10 @@ namespace InstitutoBack.Migrations
                             Id = 234,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica y Curriculum"
                         },
                         new
@@ -2939,7 +3666,10 @@ namespace InstitutoBack.Migrations
                             Id = 235,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Psicología y Educación"
                         },
                         new
@@ -2947,7 +3677,10 @@ namespace InstitutoBack.Migrations
                             Id = 236,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración II"
                         },
                         new
@@ -2955,7 +3688,10 @@ namespace InstitutoBack.Migrations
                             Id = 237,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información Contable II"
                         },
                         new
@@ -2963,7 +3699,10 @@ namespace InstitutoBack.Migrations
                             Id = 238,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho I"
                         },
                         new
@@ -2971,7 +3710,10 @@ namespace InstitutoBack.Migrations
                             Id = 239,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Economía"
                         },
                         new
@@ -2979,7 +3721,10 @@ namespace InstitutoBack.Migrations
                             Id = 240,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Estadística Aplicada"
                         },
                         new
@@ -2987,7 +3732,10 @@ namespace InstitutoBack.Migrations
                             Id = 241,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica de la Administración I"
                         },
                         new
@@ -2995,7 +3743,10 @@ namespace InstitutoBack.Migrations
                             Id = 242,
                             AnioCarreraId = 14,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docencia II"
                         },
                         new
@@ -3003,7 +3754,10 @@ namespace InstitutoBack.Migrations
                             Id = 243,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Historia y Política de la Educación Argentina"
                         },
                         new
@@ -3011,7 +3765,10 @@ namespace InstitutoBack.Migrations
                             Id = 244,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Filosofía"
                         },
                         new
@@ -3019,7 +3776,10 @@ namespace InstitutoBack.Migrations
                             Id = 245,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Metodología de la Investigación"
                         },
                         new
@@ -3027,7 +3787,10 @@ namespace InstitutoBack.Migrations
                             Id = 246,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración III"
                         },
                         new
@@ -3035,7 +3798,10 @@ namespace InstitutoBack.Migrations
                             Id = 247,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sistema de Información Contable III"
                         },
                         new
@@ -3043,7 +3809,10 @@ namespace InstitutoBack.Migrations
                             Id = 248,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Impositiva y Laboral"
                         },
                         new
@@ -3051,7 +3820,10 @@ namespace InstitutoBack.Migrations
                             Id = 249,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Derecho II"
                         },
                         new
@@ -3059,7 +3831,10 @@ namespace InstitutoBack.Migrations
                             Id = 250,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Didáctica de la Administración II"
                         },
                         new
@@ -3067,7 +3842,10 @@ namespace InstitutoBack.Migrations
                             Id = 251,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Sujetos de la Educación Secundaria"
                         },
                         new
@@ -3075,7 +3853,10 @@ namespace InstitutoBack.Migrations
                             Id = 252,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Práctica Docente III"
                         },
                         new
@@ -3083,7 +3864,10 @@ namespace InstitutoBack.Migrations
                             Id = 253,
                             AnioCarreraId = 15,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Producción de los Recursos Didácticos I"
                         },
                         new
@@ -3091,7 +3875,10 @@ namespace InstitutoBack.Migrations
                             Id = 254,
                             AnioCarreraId = 16,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Ética y Trabajo Docente"
                         },
                         new
@@ -3099,7 +3886,10 @@ namespace InstitutoBack.Migrations
                             Id = 255,
                             AnioCarreraId = 16,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Educación Sexual Integral"
                         },
                         new
@@ -3107,7 +3897,10 @@ namespace InstitutoBack.Migrations
                             Id = 256,
                             AnioCarreraId = 16,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "UCCV Comunicación Social"
                         },
                         new
@@ -3115,7 +3908,10 @@ namespace InstitutoBack.Migrations
                             Id = 257,
                             AnioCarreraId = 16,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Administración IV"
                         },
                         new
@@ -3123,6 +3919,7 @@ namespace InstitutoBack.Migrations
                             Id = 258,
                             AnioCarreraId = 16,
                             Eliminado = false,
+<<<<<<< HEAD
                             EsRecreo = false,
                             Nombre = "Gestión Organizacional"
                         },
@@ -3196,54 +3993,175 @@ namespace InstitutoBack.Migrations
                             AnioCarreraId = 4,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Nombre = "Gestión Organizacional"
+                        },
+                        new
+                        {
+                            Id = 259,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            Nombre = "Matemática Financiera"
+                        },
+                        new
+                        {
+                            Id = 260,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            Nombre = "Prácticas de Investigación"
+                        },
+                        new
+                        {
+                            Id = 261,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            Nombre = "Práctica Docente IV (Residencia)"
+                        },
+                        new
+                        {
+                            Id = 262,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            Nombre = "Producción de los Recursos Didácticos II"
+                        },
+                        new
+                        {
+                            Id = 263,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            Nombre = "Unidad de Definición Institucional"
+                        },
+                        new
+                        {
+                            Id = 264,
+                            AnioCarreraId = 1,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 268,
                             AnioCarreraId = 5,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 265,
+                            AnioCarreraId = 2,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 269,
                             AnioCarreraId = 6,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 266,
+                            AnioCarreraId = 3,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 270,
                             AnioCarreraId = 7,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 267,
+                            AnioCarreraId = 4,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 271,
                             AnioCarreraId = 8,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 268,
+                            AnioCarreraId = 5,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 272,
                             AnioCarreraId = 9,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 269,
+                            AnioCarreraId = 6,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
                             Id = 273,
                             AnioCarreraId = 10,
                             Eliminado = false,
                             EsRecreo = false,
+=======
+                            Id = 270,
+                            AnioCarreraId = 7,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 274,
+                            AnioCarreraId = 11,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 271,
+                            AnioCarreraId = 8,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 275,
+                            AnioCarreraId = 12,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 272,
+                            AnioCarreraId = 9,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 276,
+                            AnioCarreraId = 13,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 273,
+                            AnioCarreraId = 10,
+                            Eliminado = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3251,7 +4169,6 @@ namespace InstitutoBack.Migrations
                             Id = 274,
                             AnioCarreraId = 11,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3259,7 +4176,6 @@ namespace InstitutoBack.Migrations
                             Id = 275,
                             AnioCarreraId = 12,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3267,7 +4183,6 @@ namespace InstitutoBack.Migrations
                             Id = 276,
                             AnioCarreraId = 13,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3275,7 +4190,6 @@ namespace InstitutoBack.Migrations
                             Id = 277,
                             AnioCarreraId = 14,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3283,7 +4197,6 @@ namespace InstitutoBack.Migrations
                             Id = 278,
                             AnioCarreraId = 15,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3291,7 +4204,6 @@ namespace InstitutoBack.Migrations
                             Id = 279,
                             AnioCarreraId = 16,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3299,7 +4211,6 @@ namespace InstitutoBack.Migrations
                             Id = 280,
                             AnioCarreraId = 17,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3307,7 +4218,6 @@ namespace InstitutoBack.Migrations
                             Id = 281,
                             AnioCarreraId = 18,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3315,7 +4225,6 @@ namespace InstitutoBack.Migrations
                             Id = 282,
                             AnioCarreraId = 19,
                             Eliminado = false,
-                            EsRecreo = false,
                             Nombre = "Recreo"
                         },
                         new
@@ -3323,11 +4232,110 @@ namespace InstitutoBack.Migrations
                             Id = 283,
                             AnioCarreraId = 20,
                             Eliminado = false,
-                            EsRecreo = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Nombre = "Recreo"
                         },
                         new
                         {
+<<<<<<< HEAD
+                            Id = 277,
+                            AnioCarreraId = 14,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 284,
+                            AnioCarreraId = 21,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 278,
+                            AnioCarreraId = 15,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 285,
+                            AnioCarreraId = 22,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 279,
+                            AnioCarreraId = 16,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 286,
+                            AnioCarreraId = 23,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 280,
+                            AnioCarreraId = 17,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 287,
+                            AnioCarreraId = 24,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 281,
+                            AnioCarreraId = 18,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 288,
+                            AnioCarreraId = 25,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 282,
+                            AnioCarreraId = 19,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 289,
+                            AnioCarreraId = 26,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
+                            Id = 283,
+                            AnioCarreraId = 20,
+                            Eliminado = false,
+                            EsRecreo = false,
+=======
+                            Id = 290,
+                            AnioCarreraId = 27,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
+                            Nombre = "Recreo"
+                        },
+                        new
+                        {
+<<<<<<< HEAD
                             Id = 284,
                             AnioCarreraId = 21,
                             Eliminado = false,
@@ -3479,6 +4487,771 @@ namespace InstitutoBack.Migrations
                     b.ToTable("detalleshorarios");
                 });
 
+=======
+                            Id = 291,
+                            AnioCarreraId = 28,
+                            Eliminado = false,
+                            Nombre = "Recreo"
+                        });
+                });
+
+            modelBuilder.Entity("InstitutoServices.Models.Commons.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AlumnoId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DocenteId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("TipoUsuario")
+                        .HasColumnType("int");
+
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlumnoId");
+
+                    b.HasIndex("DocenteId");
+
+                    b.ToTable("usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DocenteId = 1,
+                            Eliminado = false,
+                            Email = "admin@gmail.com",
+                            Password = "",
+                            TipoUsuario = 2,
+                            User = "admin"
+                        });
+                });
+
+            modelBuilder.Entity("InstitutoServices.Models.Horarios.DetalleHorario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Dia")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int?>("HoraId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HorarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HoraId");
+
+                    b.HasIndex("HorarioId");
+
+                    b.ToTable("detalleshorarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 24,
+                            HorarioId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 24,
+                            HorarioId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 3
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 4
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 4
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 4
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 4
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 5
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 5
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 5
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 6
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 6
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 6
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 6
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 7
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 7
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 7
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 8
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 8
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 8
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 33,
+                            HorarioId = 9
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 11
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 11
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 11
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 12
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 12
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 12
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 12
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 13
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 13
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 13
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 14
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 14
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 14
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 15
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 15
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 15
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 16
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 16
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 16
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 17
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 17
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 17
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 33,
+                            HorarioId = 18
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Dia = 3,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 20
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 20
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 20
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 21
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 21
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 21
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 26,
+                            HorarioId = 22
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 28,
+                            HorarioId = 22
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 22
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 30,
+                            HorarioId = 23
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 23
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 23
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 24
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 24
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Dia = 1,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 24
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 25
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 25
+                        },
+                        new
+                        {
+                            Id = 80,
+                            Dia = 2,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 25
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 34,
+                            HorarioId = 26
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 36,
+                            HorarioId = 26
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Dia = 4,
+                            Eliminado = false,
+                            HoraId = 38,
+                            HorarioId = 26
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Dia = 0,
+                            Eliminado = false,
+                            HoraId = 33,
+                            HorarioId = 27
+                        });
+                });
+
+>>>>>>> Mejoras en autenticación y limpieza de código
             modelBuilder.Entity("InstitutoServices.Models.Horarios.Hora", b =>
                 {
                     b.Property<int>("Id")
@@ -3493,12 +5266,335 @@ namespace InstitutoBack.Migrations
                     b.Property<bool>("Eliminado")
                         .HasColumnType("tinyint(1)");
 
+<<<<<<< HEAD
+=======
+                    b.Property<bool>("EsRecreo")
+                        .HasColumnType("tinyint(1)");
+
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.Property<DateTime>("Hasta")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
                     b.ToTable("horas");
+<<<<<<< HEAD
+=======
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = true,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = true,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = true,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = true,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = true,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Desde = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Eliminado = false,
+                            EsRecreo = false,
+                            Hasta = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
+>>>>>>> Mejoras en autenticación y limpieza de código
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.Horarios.Horario", b =>
@@ -3528,6 +5624,227 @@ namespace InstitutoBack.Migrations
                     b.HasIndex("MateriaId");
 
                     b.ToTable("horarios");
+<<<<<<< HEAD
+=======
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 7
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CantidadHoras = 4,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 135
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CantidadHoras = 4,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 134
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CantidadHoras = 4,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 130
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 133
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CantidadHoras = 4,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 131
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 127
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 132
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CantidadHoras = 1,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 264
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CantidadHoras = 5,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 141
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 138
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CantidadHoras = 4,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 144
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 142
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 140
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 139
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 143
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 136
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CantidadHoras = 1,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 265
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CantidadHoras = 5,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 148
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 153
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 145
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 152
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 151
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 147
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 149
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CantidadHoras = 3,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 150
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CantidadHoras = 1,
+                            CicloLectivoId = 1,
+                            Eliminado = false,
+                            MateriaId = 266
+                        });
+>>>>>>> Mejoras en autenticación y limpieza de código
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.Horarios.IntegranteHorario", b =>
@@ -3554,6 +5871,179 @@ namespace InstitutoBack.Migrations
                     b.HasIndex("HorarioId");
 
                     b.ToTable("integranteshorarios");
+<<<<<<< HEAD
+=======
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            HorarioId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DocenteId = 2,
+                            Eliminado = false,
+                            HorarioId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DocenteId = 67,
+                            Eliminado = false,
+                            HorarioId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DocenteId = 36,
+                            Eliminado = false,
+                            HorarioId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DocenteId = 47,
+                            Eliminado = false,
+                            HorarioId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DocenteId = 48,
+                            Eliminado = false,
+                            HorarioId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DocenteId = 31,
+                            Eliminado = false,
+                            HorarioId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DocenteId = 64,
+                            Eliminado = false,
+                            HorarioId = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DocenteId = 17,
+                            Eliminado = false,
+                            HorarioId = 10
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            HorarioId = 11
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            HorarioId = 12
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            HorarioId = 13
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DocenteId = 60,
+                            Eliminado = false,
+                            HorarioId = 14
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DocenteId = 37,
+                            Eliminado = false,
+                            HorarioId = 15
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            HorarioId = 16
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DocenteId = 63,
+                            Eliminado = false,
+                            HorarioId = 17
+                        },
+                        new
+                        {
+                            Id = 17,
+                            DocenteId = 33,
+                            Eliminado = false,
+                            HorarioId = 19
+                        },
+                        new
+                        {
+                            Id = 18,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            HorarioId = 20
+                        },
+                        new
+                        {
+                            Id = 19,
+                            DocenteId = 67,
+                            Eliminado = false,
+                            HorarioId = 21
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DocenteId = 18,
+                            Eliminado = false,
+                            HorarioId = 22
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DocenteId = 18,
+                            Eliminado = false,
+                            HorarioId = 23
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            HorarioId = 24
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DocenteId = 47,
+                            Eliminado = false,
+                            HorarioId = 25
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DocenteId = 18,
+                            Eliminado = false,
+                            HorarioId = 26
+                        });
+>>>>>>> Mejoras en autenticación y limpieza de código
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.Inscripciones.CicloLectivo", b =>
@@ -3564,9 +6054,12 @@ namespace InstitutoBack.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+<<<<<<< HEAD
                     b.Property<bool>("Actual")
                         .HasColumnType("tinyint(1)");
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.Property<bool>("Eliminado")
                         .HasColumnType("tinyint(1)");
 
@@ -3582,7 +6075,10 @@ namespace InstitutoBack.Migrations
                         new
                         {
                             Id = 1,
+<<<<<<< HEAD
                             Actual = false,
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Eliminado = false,
                             Nombre = "2024"
                         });
@@ -3668,11 +6164,19 @@ namespace InstitutoBack.Migrations
                             CarreraId = 1,
                             CicloLectivoId = 1,
                             Eliminado = false,
+<<<<<<< HEAD
                             Fecha = new DateTime(2024, 10, 24, 10, 59, 19, 580, DateTimeKind.Local).AddTicks(8001)
                         });
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.DetalleInscripcionExamen", b =>
+=======
+                            Fecha = new DateTime(2024, 10, 10, 14, 34, 30, 493, DateTimeKind.Local).AddTicks(8595)
+                        });
+                });
+
+            modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.DetalleMesaExamen", b =>
+>>>>>>> Mejoras en autenticación y limpieza de código
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -3680,17 +6184,28 @@ namespace InstitutoBack.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("DocenteId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Eliminado")
                         .HasColumnType("tinyint(1)");
 
+<<<<<<< HEAD
                     b.Property<int>("InscripcionExamenId")
                         .HasColumnType("int");
 
                     b.Property<int>("MateriaId")
+=======
+                    b.Property<int>("MesaExamenId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoIntegrante")
+>>>>>>> Mejoras en autenticación y limpieza de código
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.HasIndex("InscripcionExamenId");
 
                     b.HasIndex("MateriaId");
@@ -3720,6 +6235,8 @@ namespace InstitutoBack.Migrations
 
                     b.HasKey("Id");
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.HasIndex("DocenteId");
 
                     b.HasIndex("MesaExamenId");
@@ -4327,6 +6844,7 @@ namespace InstitutoBack.Migrations
                             MesaExamenId = 19,
                             TipoIntegrante = 2
                         },
+<<<<<<< HEAD
                         new
                         {
                             Id = 76,
@@ -4393,6 +6911,74 @@ namespace InstitutoBack.Migrations
                         },
                         new
                         {
+=======
+                        new
+                        {
+                            Id = 76,
+                            DocenteId = 31,
+                            Eliminado = false,
+                            MesaExamenId = 19,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 77,
+                            DocenteId = 47,
+                            Eliminado = false,
+                            MesaExamenId = 20,
+                            TipoIntegrante = 0
+                        },
+                        new
+                        {
+                            Id = 78,
+                            DocenteId = 22,
+                            Eliminado = false,
+                            MesaExamenId = 20,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 79,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            MesaExamenId = 20,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+                            Id = 80,
+                            DocenteId = 64,
+                            Eliminado = false,
+                            MesaExamenId = 20,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 81,
+                            DocenteId = 15,
+                            Eliminado = false,
+                            MesaExamenId = 21,
+                            TipoIntegrante = 0
+                        },
+                        new
+                        {
+                            Id = 82,
+                            DocenteId = 59,
+                            Eliminado = false,
+                            MesaExamenId = 21,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 83,
+                            DocenteId = 5,
+                            Eliminado = false,
+                            MesaExamenId = 21,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+>>>>>>> Mejoras en autenticación y limpieza de código
                             Id = 84,
                             DocenteId = 53,
                             Eliminado = false,
@@ -5755,6 +8341,7 @@ namespace InstitutoBack.Migrations
                         {
                             Id = 254,
                             DocenteId = 7,
+<<<<<<< HEAD
                             Eliminado = false,
                             MesaExamenId = 64,
                             TipoIntegrante = 1
@@ -5876,6 +8463,129 @@ namespace InstitutoBack.Migrations
                             Id = 269,
                             DocenteId = 18,
                             Eliminado = false,
+=======
+                            Eliminado = false,
+                            MesaExamenId = 64,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 255,
+                            DocenteId = 33,
+                            Eliminado = false,
+                            MesaExamenId = 64,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+                            Id = 256,
+                            DocenteId = 48,
+                            Eliminado = false,
+                            MesaExamenId = 64,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 257,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            MesaExamenId = 65,
+                            TipoIntegrante = 0
+                        },
+                        new
+                        {
+                            Id = 258,
+                            DocenteId = 18,
+                            Eliminado = false,
+                            MesaExamenId = 65,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 259,
+                            DocenteId = 48,
+                            Eliminado = false,
+                            MesaExamenId = 65,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+                            Id = 260,
+                            DocenteId = 2,
+                            Eliminado = false,
+                            MesaExamenId = 65,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 261,
+                            DocenteId = 67,
+                            Eliminado = false,
+                            MesaExamenId = 66,
+                            TipoIntegrante = 0
+                        },
+                        new
+                        {
+                            Id = 262,
+                            DocenteId = 48,
+                            Eliminado = false,
+                            MesaExamenId = 66,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 263,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            MesaExamenId = 66,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+                            Id = 264,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            MesaExamenId = 66,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 265,
+                            DocenteId = 63,
+                            Eliminado = false,
+                            MesaExamenId = 67,
+                            TipoIntegrante = 0
+                        },
+                        new
+                        {
+                            Id = 266,
+                            DocenteId = 34,
+                            Eliminado = false,
+                            MesaExamenId = 67,
+                            TipoIntegrante = 1
+                        },
+                        new
+                        {
+                            Id = 267,
+                            DocenteId = 18,
+                            Eliminado = false,
+                            MesaExamenId = 67,
+                            TipoIntegrante = 2
+                        },
+                        new
+                        {
+                            Id = 268,
+                            DocenteId = 29,
+                            Eliminado = false,
+                            MesaExamenId = 67,
+                            TipoIntegrante = 3
+                        },
+                        new
+                        {
+                            Id = 269,
+                            DocenteId = 18,
+                            Eliminado = false,
+>>>>>>> Mejoras en autenticación y limpieza de código
                             MesaExamenId = 68,
                             TipoIntegrante = 0
                         },
@@ -8145,6 +10855,7 @@ namespace InstitutoBack.Migrations
                         });
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.InscripcionExamen", b =>
                 {
                     b.Property<int>("Id")
@@ -8179,6 +10890,8 @@ namespace InstitutoBack.Migrations
                     b.ToTable("inscripcionesExamenes");
                 });
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.MesaExamen", b =>
                 {
                     b.Property<int>("Id")
@@ -9643,7 +12356,11 @@ namespace InstitutoBack.Migrations
             modelBuilder.Entity("InstitutoServices.Models.Commons.InscriptoCarrera", b =>
                 {
                     b.HasOne("InstitutoServices.Models.Commons.Alumno", "Alumno")
+<<<<<<< HEAD
                         .WithMany("InscripcionesACarreras")
+=======
+                        .WithMany()
+>>>>>>> Mejoras en autenticación y limpieza de código
                         .HasForeignKey("AlumnoId");
 
                     b.HasOne("InstitutoServices.Models.Commons.Carrera", "Carrera")
@@ -9655,6 +12372,7 @@ namespace InstitutoBack.Migrations
                     b.Navigation("Carrera");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.Commons.JefaturaSeccion", b =>
                 {
                     b.HasOne("InstitutoServices.Models.Commons.Carrera", "Carrera")
@@ -9674,6 +12392,12 @@ namespace InstitutoBack.Migrations
                 {
                     b.HasOne("InstitutoServices.Models.Commons.AnioCarrera", "AnioCarrera")
                         .WithMany()
+=======
+            modelBuilder.Entity("InstitutoServices.Models.Commons.Materia", b =>
+                {
+                    b.HasOne("InstitutoServices.Models.Commons.AnioCarrera", "AnioCarrera")
+                        .WithMany()
+>>>>>>> Mejoras en autenticación y limpieza de código
                         .HasForeignKey("AnioCarreraId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -9698,10 +12422,13 @@ namespace InstitutoBack.Migrations
 
             modelBuilder.Entity("InstitutoServices.Models.Horarios.DetalleHorario", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("InstitutoServices.Models.Commons.Aula", "Aula")
                         .WithMany()
                         .HasForeignKey("AulaId");
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.HasOne("InstitutoServices.Models.Horarios.Hora", "Hora")
                         .WithMany()
                         .HasForeignKey("HoraId");
@@ -9793,6 +12520,7 @@ namespace InstitutoBack.Migrations
                     b.Navigation("CicloLectivo");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.DetalleInscripcionExamen", b =>
                 {
                     b.HasOne("InstitutoServices.Models.MesasExamenes.InscripcionExamen", "InscripcionExamen")
@@ -9820,6 +12548,16 @@ namespace InstitutoBack.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+=======
+            modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.DetalleMesaExamen", b =>
+                {
+                    b.HasOne("InstitutoServices.Models.Commons.Docente", "Docente")
+                        .WithMany()
+                        .HasForeignKey("DocenteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+>>>>>>> Mejoras en autenticación y limpieza de código
                     b.HasOne("InstitutoServices.Models.MesasExamenes.MesaExamen", "MesaExamen")
                         .WithMany("DetallesMesaExamen")
                         .HasForeignKey("MesaExamenId")
@@ -9829,6 +12567,7 @@ namespace InstitutoBack.Migrations
                     b.Navigation("Docente");
 
                     b.Navigation("MesaExamen");
+<<<<<<< HEAD
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.InscripcionExamen", b =>
@@ -9856,6 +12595,8 @@ namespace InstitutoBack.Migrations
                     b.Navigation("Carrera");
 
                     b.Navigation("TurnoExamen");
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
                 });
 
             modelBuilder.Entity("InstitutoServices.Models.MesasExamenes.MesaExamen", b =>
@@ -9877,11 +12618,14 @@ namespace InstitutoBack.Migrations
                     b.Navigation("TurnoExamen");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("InstitutoServices.Models.Commons.Alumno", b =>
                 {
                     b.Navigation("InscripcionesACarreras");
                 });
 
+=======
+>>>>>>> Mejoras en autenticación y limpieza de código
             modelBuilder.Entity("InstitutoServices.Models.Horarios.Horario", b =>
                 {
                     b.Navigation("DetallesHorario");
