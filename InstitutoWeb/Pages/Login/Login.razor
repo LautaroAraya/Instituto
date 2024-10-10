@@ -1,16 +1,11 @@
 ﻿@page "/login"
-@using InstitutoServices.Models.Login
-@using InstitutoServices.Util
-@inject AuthenticationService AuthService
+@inject FirebaseAuthService AuthService
 @inject NavigationManager NavigationManager
 @inject SweetAlertService SweetAlert
-@inject ILogger<Login> logger
-@inject IUsuarioService usuarioService
-@inject IUsuarioStateService usuarioStateService
 
 
 
-@if (userFirebaseAuthenticate == null)
+@if (!IsAuthenticated)
 {
     <h3>Iniciar sesión</h3>
 
@@ -24,16 +19,8 @@
             <label for="clave">Contraseña</label>
             <InputText class="form-control mb-2" type="password" @bind-Value="usuario.Password" />
         </div>
-
-        <div class="form-group">
-            <label>Recordar Contraseña</label>
-            <InputCheckbox @bind-Value="remenberPassword" />
-        </div>
-
         <ValidationSummary />
         <button type="submit" class="btn btn-primary">Ingresar</button>
-        <button class="btn btn-secondary" @onclick="Registrarse">Registrarse</button>
-
     </EditForm>
     <button class="btn btn-dark" @onclick="LoginGoogle">Google</button>
     <button class="btn btn-info" @onclick="LoginFacebook">Facebook</button>
@@ -51,9 +38,9 @@ else
 
 
 @code {
-    Usuario? usuario { get; set; } = new Usuario();
+    Usuario usuario { get; set; } =new Usuario();
 
-    bool remenberPassword { get; set; } = false;
+    bool IsAuthenticated { get; set; }=false;
 
     FirebaseUser? userFirebaseAuthenticate { get; set; } = null;
 
@@ -66,33 +53,10 @@ else
 
     private async Task IniciarSesion()
     {
-        LoginResponse response = await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password, remenberPassword);
-        //logger.LogInformation($"la confirmación del email es igual a:{user.EmailVerified}");
-        if (response.User == null)
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Error inicio de sesión",
-                    Text = $"Error:{response.Error}",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-            return;
-        }
-        else
-        if (!response.User.EmailVerified)
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Verificación de email",
-                    Text = $"{response.User.DisplayName} Debe verificar su email para poder continuar",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-            return;
-        }
+        await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password);
+        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        StateHasChanged();
+    }
 
     }
 
@@ -121,69 +85,6 @@ else
     {
 
         StateHasChanged();
-        //si ya hay alguien autenticado lo envio al componente perfilUsuario
-        if (usuarioStateService.FirebaseUser != null)
-        {
-            NavigationManager.NavigateTo("/perfilusuario");
-        }
-    }
-
-    public void Dispose()
-    {
-        usuarioStateService.OnChange -= ChequeoEstadoLogin;
-    }
-
-    private async Task ResetearPassword()
-    {
-        if (!Helper.IsEmailValid(usuario.Email))
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Resetear contraseña",
-                    Text = $"Error, debe ingresar un email válido en el formulario, email=\"{usuario.Email}\"",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-            return;
-        }
-        var usuarioExistente = await usuarioService.GetUserByEmail(usuario.Email);
-        if (usuarioExistente == null)
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Resetear contraseña",
-                    Text = $"Error, no existe un usuario con el email {usuario.Email}",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-            return;
-        }
-        bool reseteo = await AuthService.SendPasswordResetEmail(usuario.Email);
-        if (reseteo)
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Resetear contraseña",
-                    Text = $"Se envió un email a {usuario.Email} para resetear la contraseña",
-                    Icon = SweetAlertIcon.Info,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-        }
-        else
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Resetear contraseña",
-                    Text = $"Error al enviar el email a {usuario.Email} para resetear la contraseña",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Ok",
-                });
-        }
-
-    }
-
+     }
+        
 }
