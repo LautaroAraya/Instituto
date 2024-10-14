@@ -1,19 +1,8 @@
-﻿using InstitutoServices.Models.Inscripciones;
+﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
 using InstitutoServices.Interfaces;
-using InstitutoServices.Services;
-using InstitutoDesktop.Views.Inscripciones;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Models;
-using InstitutoServices.Services.Commons;
 using InstitutoServices.Models.MesasExamenes;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views.MesasExamenes
 {
@@ -30,7 +19,10 @@ namespace InstitutoDesktop.Views.MesasExamenes
 
         private async Task CargarGrilla()
         {
+            ShowInActivity.Show("Descargando/actualizando la lista de turnos de exámenes");
             listaTurnos.DataSource = await turnoexamenesService.GetAllAsync();
+            dataGridTurnoExamenes.OcultarColumnas(new string[] { "Eliminado" });
+            ShowInActivity.Hide();
         }
         private async void btnEliminar_Click(object sender, EventArgs e)
         {

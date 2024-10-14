@@ -2,8 +2,10 @@
 {
     public enum TipoUsuarioEnum
     {
-        Alumno,
+        Alumno=1,
         Docente,
-        Directivo
+        Jefe_sección,
+        Directivo,
+
     }
 }

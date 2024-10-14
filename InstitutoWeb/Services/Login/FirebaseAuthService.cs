@@ -1,5 +1,7 @@
 ﻿using InstitutoServices.Models.Login;
 using Microsoft.JSInterop;
+using System.Diagnostics;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace InstitutoWeb.Services.Login
@@ -7,7 +9,7 @@ namespace InstitutoWeb.Services.Login
     public class FirebaseAuthService
     {
         private readonly IJSRuntime _jsRuntime;
-        private const string UserIdKey = "firebaseUserId";
+        private const string UserFirebase = "firebaseUser";
         public event Action OnChangeLogin;
 
         public FirebaseAuthService(IJSRuntime jsRuntime)
@@ -17,6 +19,39 @@ namespace InstitutoWeb.Services.Login
 
         public async Task<FirebaseUser> LoginWithGoogle()
         {
+            var user = await _jsRuntime.InvokeAsync<FirebaseUser>("firebaseAuth.loginWithGoogle");
+
+            if (user != null)
+            {
+                OnChangeLogin?.Invoke();
+            }
+            return user;
+        }
+
+        public async Task<FirebaseUser> LoginWithFacebook()
+        {
+            var user = await _jsRuntime.InvokeAsync<FirebaseUser>("firebaseAuth.loginWithFacebook");
+
+            if (user != null)
+            {
+                OnChangeLogin?.Invoke();
+            }
+            return user;
+        }
+
+        public async Task<LoginResponse> SignInWithEmailPassword(string email, string password, bool rememberPassword)
+        {
+
+                var response = await _jsRuntime.InvokeAsync<LoginResponse>("firebaseAuth.signInWithEmailPassword", email, password, rememberPassword);
+            OnChangeLogin?.Invoke();
+
+            return response;
+
+        }
+
+        public async Task<string> createUserWithEmailAndPassword(string email, string password, string displayName)
+        {
+            var userId = await _jsRuntime.InvokeAsync<string>("firebaseAuth.createUserWithEmailAndPassword", email, password, displayName);
             var user = await _jsRuntime.InvokeAsync<FirebaseUser>("firebaseAuth.loginWithGoogle");
 
             if (user != null)
@@ -61,28 +96,19 @@ namespace InstitutoWeb.Services.Login
         {
             await _jsRuntime.InvokeVoidAsync("firebaseAuth.signOut");
             await _jsRuntime.InvokeVoidAsync("localStorageHelper.removeItem", UserIdKey);
-            await _jsRuntime.InvokeVoidAsync("sessionStorageHelper.removeItem", UserIdKey);
             OnChangeLogin?.Invoke();
         }
 
-        public async Task<string> GetUserIdInLocalStorage()
+        public async Task<string> GetUserId()
         {
             return await _jsRuntime.InvokeAsync<string>("localStorageHelper.getItem", UserIdKey);
         }
-        public async Task<string> GetUserIdInSesionStorage()
-        {
-            return await _jsRuntime.InvokeAsync<string>("sessionStorageHelper.getItem", UserIdKey);
-        }
-
 
         public async Task<bool> IsUserAuthenticated()
         {
-            var userId = await GetUserIdInLocalStorage();
-            if (string.IsNullOrEmpty(userId))
-            {
-                userId = await GetUserIdInSesionStorage();
-            }
+            var userId = await GetUserId();
             return !string.IsNullOrEmpty(userId);
         }
+
     }
 }

@@ -12,7 +12,7 @@ namespace InstitutoServices.Models.Commons
         public int? AlumnoId { get; set; }
         public Alumno? Alumno { get; set; } = null;
         public int? DocenteId { get; set; }
-        public Docente? Docente { get; set; }
+        public Docente? Docente { get; set; } = null;
         public bool Eliminado { get; set; } = false;
 
 

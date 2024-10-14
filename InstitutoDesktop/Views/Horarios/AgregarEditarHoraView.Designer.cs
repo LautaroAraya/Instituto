@@ -42,6 +42,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Segoe UI", 11F);
+            txtNombre.Location = new Point(308, 194);
             txtNombre.Location = new Point(278, 216);
             txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
@@ -53,7 +54,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(189, 223);
+            label1.Location = new Point(222, 106);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(57, 25);
@@ -95,15 +96,12 @@
             // chkRecreo
             // 
             chkRecreo.AutoSize = true;
-            chkRecreo.Location = new Point(356, 307);
+            chkRecreo.Location = new Point(321, 168);
             chkRecreo.Name = "chkRecreo";
             chkRecreo.Size = new Size(77, 24);
             chkRecreo.TabIndex = 14;
             chkRecreo.Text = "Recreo";
             chkRecreo.UseVisualStyleBackColor = true;
-            chkRecreo.CheckedChanged += chkRecreo_CheckedChanged;
-            // 
-            // dateTimeDesde
             // 
             dateTimeDesde.Format = DateTimePickerFormat.Time;
             dateTimeDesde.Location = new Point(278, 51);

@@ -61,11 +61,30 @@ namespace InstitutoServices.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a true.
+        /// </summary>
+        internal static string Remoto {
+            get {
+                return ResourceManager.GetString("Remoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://localhost:7202/api/.
         /// </summary>
-        internal static string UrlApi {
+        internal static string UrlApiLocal {
             get {
-                return ResourceManager.GetString("UrlApi", resourceCulture);
+                return ResourceManager.GetString("UrlApiLocal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://datainstituto.azurewebsites.net/api/.
+        ///   Busca una cadena traducida similar a https://localhost:7202/api/.
+        /// </summary>
+        internal static string UrlApiRemoto {
+            get {
+                return ResourceManager.GetString("UrlApiRemoto", resourceCulture);
             }
         }
     }

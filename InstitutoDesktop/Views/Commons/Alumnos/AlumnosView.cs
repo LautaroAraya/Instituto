@@ -1,18 +1,8 @@
-﻿using InstitutoServices.Services;
-using InstitutoDesktop.Views.Commons;
+﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
 using InstitutoServices.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Models;
-using InstitutoServices.Services.Commons;
 using InstitutoServices.Models.Commons;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views.Commons.Alumnos
 {
@@ -30,7 +20,10 @@ namespace InstitutoDesktop.Views.Commons.Alumnos
 
         private async Task CargarGrilla()
         {
+            ShowInActivity.Show("Descargando/actualizando la lista de alumnos");
             listaAlumnos.DataSource = await alumnoService.GetAllAsync();
+            dataGridAlumnos.OcultarColumnas(new string[] { "Eliminado" });
+            ShowInActivity.Hide();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

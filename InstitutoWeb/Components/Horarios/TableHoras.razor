@@ -1,0 +1,46 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hora in ListHoras)
+        {
+            <tr>
+                <td>@hora.Id</td>
+                <td>@hora.Nombre</td>
+                <td>
+                    <button class="btn btn-primary mb-2" @onclick="()=>HandleEditar(hora)">Editar</button>
+                </td>
+                <td>
+                    <button title="Eliminar" class="btn btn-danger" @onclick="@(()=>HandleEliminar(hora))">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<Hora> ListHoras { get; set; }
+
+    [Parameter]
+    public EventCallback<Hora> OnEditar { get; set; }
+
+    [Parameter]
+    public EventCallback<Hora> OnEliminar { get; set; }
+
+    private void HandleEditar(Hora hora)
+    {
+        OnEditar.InvokeAsync(hora);
+    }
+
+    private void HandleEliminar(Hora hora)
+    {
+        OnEliminar.InvokeAsync(hora);
+    }
+}

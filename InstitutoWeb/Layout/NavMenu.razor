@@ -1,4 +1,7 @@
-﻿@inject FirebaseAuthService AuthService
+﻿@using InstitutoServices.Models.Login
+@inject FirebaseAuthService AuthService
+@inject NavigationManager NavigationManager
+@inject ILogger<NavMenu> logger
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -18,12 +21,8 @@
         </div>
 
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="login">
-                <span class="bi-box-arrow-in-right" aria-hidden="true"></span> @textoMenuLogin
-            </NavLink>
-        </div>
-        @if (IsAuthenticated)
+
+        @if (userFirebaseAuthenticate!=null)
         {
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="turnosexamenes">
@@ -71,6 +70,28 @@
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Horarios
             </NavLink>
         </div>
+        <div class="nav-item px-3">
+            @if (userFirebaseAuthenticate != null)
+            {
+                <div class="user-info-container d-flex flex-column align-items-center p-3">
+                    <a href="perfilusuario">
+                        <img src="@userFirebaseAuthenticate?.PhotoUrl" class="rounded-circle user-photo mb-2" />
+                    </a>
+
+                        <span class="user-name">@userFirebaseAuthenticate?.DisplayName</span>
+                    
+                    <button class="logout-button btn btn-outline-light mt-2" @onclick="CerrarSesion">
+                        <span class="bi-box-arrow-in-right" aria-hidden="true"></span> @textoMenuLogin
+                    </button>
+                </div>
+            }
+            else
+            {
+                <NavLink class="nav-link" href="login">
+                    <span class="bi-box-arrow-in-right" aria-hidden="true"></span> @textoMenuLogin
+                </NavLink>
+            }
+        </div>
 
     </nav>
 </div>
@@ -80,9 +101,9 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private bool IsAuthenticated;
+    FirebaseUser? userFirebaseAuthenticate { get; set; } = null;
 
-    private string textoMenuLogin => IsAuthenticated ? "Cerrar sesión" : "Iniciar sesión";
+    private string textoMenuLogin => userFirebaseAuthenticate!=null ? "Cerrar sesión" : "Iniciar sesión";
 
     private void ToggleNavMenu()
     {
@@ -91,7 +112,7 @@
 
     protected async override Task OnInitializedAsync()
     {
-        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
         AuthService.OnChangeLogin += ChequeoEstadoLogin;
     }
 
@@ -101,8 +122,18 @@
     }
     public async void ChequeoEstadoLogin()
     {
-        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
         StateHasChanged();
-
+        //si ya hay alguien autenticado lo envio al componente perfilUsuario
+        if (userFirebaseAuthenticate != null)
+        {
+            NavigationManager.NavigateTo("/perfilusuario");
+        }
+    }
+    private async Task CerrarSesion()
+    {
+        await AuthService.SignOut();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
+        StateHasChanged();
     }
 }

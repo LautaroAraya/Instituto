@@ -1,0 +1,40 @@
+@inject IGenericService<Alumno> alumnoService
+
+<EditForm Model="alumno" OnValidSubmit="HandleGuardarAlumno" class="edit-form-horizontal">
+    <DataAnnotationsValidator />
+    <label class="form-label mb-2">Alumno:</label>
+    <InputText class="form-control mb-2" type="text" @bind-Value="alumno.ApellidoNombre" />
+    <label class="form-label mb-2">Dirección:</label>
+    <InputText class="form-control mb-2" type="text" @bind-Value="alumno.Direccion" />
+    <label class="form-label mb-2">Teléfono:</label>
+    <InputText class="form-control mb-2" type="tel" @bind-Value="alumno.Telefono" />
+    <label class="form-label mb-2">Email:</label>
+    <InputText class="form-control mb-2" type="email" @bind-Value="alumno.Email" disabled />
+    <ValidationSummary />
+    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public string ApellidoNombre { get; set; }
+
+    [Parameter]
+    public string Email { get; set; }
+
+    [Parameter]
+    public EventCallback<Alumno> OnGuardarAlumno { get; set; }
+
+    private Alumno alumno = new Alumno();
+
+    protected override async Task OnInitializedAsync()
+    {
+        alumno.ApellidoNombre = ApellidoNombre;
+        alumno.Email = Email;
+    }
+    private async Task HandleGuardarAlumno()
+    {
+        var nuevoAlumno=await alumnoService.AddAsync(alumno);
+        await OnGuardarAlumno.InvokeAsync(nuevoAlumno);
+    }
+}
+

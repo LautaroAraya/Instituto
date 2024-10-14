@@ -18,7 +18,9 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Logging.SetMinimumLevel(LogLevel.Debug);
-var urlApi = builder.Configuration.GetValue<string>("urlApi");
+string urlApi = builder.Configuration.GetValue<string>("UrlApiLocal");
+if (builder.Configuration.GetValue<bool>("Remoto")==true)
+     urlApi = builder.Configuration.GetValue<string>("UrlApiRemoto");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(urlApi) });
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
@@ -28,6 +30,9 @@ builder.Services.AddScoped<IDetalleInscripcionService, DetalleInscripcionService
 builder.Services.AddScoped<IMesaExamenService, MesaExamenService>();
 builder.Services.AddScoped<IHorarioService, HorarioService>();
 builder.Services.AddScoped<IDetalleHorarioService, DetalleHorarioService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IInscriptoCarreraService, InscriptoCarreraService>();
+builder.Services.AddScoped<IJefaturaSeccionService, JefaturaSeccionService>();
 builder.Services.AddScoped<FirebaseAuthService>();
 
 builder.Services.AddSweetAlert2();

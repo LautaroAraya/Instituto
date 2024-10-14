@@ -1,17 +1,8 @@
-﻿using InstitutoServices.Interfaces;
-using InstitutoServices.Services;
-using InstitutoDesktop.Views.Commons;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Services.Commons;
+﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
+using InstitutoServices.Interfaces;
 using InstitutoServices.Models.Horarios;
+using InstitutoServices.Services.Commons;
 using InstitutoDesktop.ExtensionMethods;
 
 namespace InstitutoDesktop.Views.Horarios
@@ -19,17 +10,19 @@ namespace InstitutoDesktop.Views.Horarios
     public partial class HorasView : Form
     {
         IGenericService<Hora> horaService = new GenericService<Hora>();
-        BindingSource listaHoras = new BindingSource();
+        BindingSource BindingHoras = new BindingSource();
+        List<Hora> listaHoras = new List<Hora>();
+
         public HorasView()
         {
             InitializeComponent();
-            dataGridHoras.DataSource = listaHoras;
+            dataGridHoras.DataSource = BindingHoras;
+
             CargarGrilla();
         }
         private async Task CargarGrilla()
         {
             listaHoras.DataSource = await horaService.GetAllAsync();
-            dataGridHoras.OcultarColumnas(new string[] { "Desde", "Hasta", "Eliminado" });
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -41,7 +34,7 @@ namespace InstitutoDesktop.Views.Horarios
 
         private async void btnEditar_Click(object sender, EventArgs e)
         {
-            var hora = (Hora)listaHoras.Current;
+            var hora = (Hora)BindingHoras.Current;
             AgregarEditarHoraView agregarEditarHoraView = new AgregarEditarHoraView(hora);
             agregarEditarHoraView.ShowDialog();
             await CargarGrilla();
@@ -49,7 +42,7 @@ namespace InstitutoDesktop.Views.Horarios
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
-            var hora = (Hora)listaHoras.Current;
+            var hora = (Hora)BindingHoras.Current;
             var respuesta = MessageBox.Show($"¿Está seguro que quiere borrar a la carrera {hora.Nombre}", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
             {
@@ -61,6 +54,17 @@ namespace InstitutoDesktop.Views.Horarios
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            BindingHoras.DataSource = listaHoras.Where(h => h.Nombre.Contains(txtFiltro.Text)).OrderBy(h => h.Nombre).ToList();
+
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            BtnBuscar.PerformClick();
         }
     }
 }

@@ -14,13 +14,19 @@ namespace InstitutoServices.Models.Horarios
         public bool Eliminado { get; set; } = false;
 
 
-        public ICollection<DetalleHorario> DetallesHorario { get; set; }
+        public ICollection<DetalleHorario>? DetallesHorario { get; set; }
 
-        public ICollection<IntegranteHorario> IntegrantesHorario { get; set; }
+        public ICollection<IntegranteHorario>? IntegrantesHorario { get; set; }
 
         public override string ToString()
         {
-            return Materia?.Nombre ?? string.Empty;
+            var docentes = string.Join(", ", IntegrantesHorario.Select(x => x.Docente?.Nombre));
+            return $"{Materia?.Nombre} {docentes}" ?? string.Empty;
+        }
+        public Horario()
+        {
+            DetallesHorario = new List<DetalleHorario>();
+            IntegrantesHorario = new List<IntegranteHorario>();
         }
     }
 }

@@ -1,0 +1,89 @@
+@inject IInscriptoCarreraService inscriptoCarreraService
+@inject IGenericService<Carrera> carreraService
+@inject ILogger<AlumnoData> logger
+
+<div>
+    <h4>Datos del Alumno</h4>
+    <p>Nombre: @alumno.ApellidoNombre</p>
+    <p>Dirección: @alumno.Direccion</p>
+    <p>Teléfono: @alumno.Telefono</p>
+</div>
+
+<button class="btn btn-primary" @onclick="()=>HandleInscribirseACarrera()">Seleccionar @tituloTableCarrera</button>
+@if (inscripcionesACarreras==null||inscripcionesACarreras.Count==0)
+{
+    <p><em>Eres un nuevo alumno, necesitamos completar tu perfil selecciona la o las carreras que cursas</em></p>
+}
+else
+{
+    <h4>@tituloTableCarrera en la que estás inscripto</h4>
+   
+    <table class="table">
+        <tbody>
+            @foreach (var inscripcion in inscripcionesACarreras)
+            {
+                <tr>
+                    <td>@inscripcion.Carrera.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (seleccionarCarreras)
+{
+    <ListCardSelection ListEntity="@(carreras.Cast<IEntityIdNombre>().ToList())" TituloCard="Carreras" OnSeleccionar="HandleSeleccionarCarrera" />
+}
+
+
+@code {
+    [Parameter]
+    public Alumno alumno { get; set; }
+    public List<InscriptoCarrera>? inscripcionesACarreras { get; set; }
+    bool seleccionarCarreras { get; set; }=false;
+    List<Carrera> carreras { get; set; }
+    string tituloTableCarrera => inscripcionesACarreras?.Count > 1 ? "Carreras" : "Carrera";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        carreras = await carreraService.GetAllAsync();
+        inscripcionesACarreras = await inscriptoCarreraService.GetByAlumno(alumno.Id);
+        logger.LogInformation(inscripcionesACarreras.Count().ToString());
+        //marco las carreras que ya están inscriptas usando el campo Eliminado
+        foreach (var carrera in carreras)
+        {
+            carrera.Eliminado = inscripcionesACarreras.Any(i => i.CarreraId == carrera.Id);
+        }
+
+
+    }
+
+    private void HandleInscribirseACarrera()
+    {
+        seleccionarCarreras = true;
+        StateHasChanged();
+    }
+
+    private async Task HandleSeleccionarCarrera(List<IEntityIdNombre> listSelected)
+    {
+        //comparo listSelected con inscripcionesACarreras y dejo 2 nuevas listas, una con las carreras a agregar y otra con las carreras a eliminar
+
+
+        foreach (var carreraSelected in listSelected)
+        {
+            if(!inscripcionesACarreras.Any(i=>i.CarreraId==carreraSelected.Id))
+                await inscriptoCarreraService.AddAsync(new InscriptoCarrera { AlumnoId = alumno.Id, CarreraId = carreraSelected.Id });
+        }
+
+        foreach (var inscripcion in inscripcionesACarreras)
+        {
+            if(listSelected.All(c=>c.Id!=inscripcion.CarreraId))
+                await inscriptoCarreraService.DeleteAsync(inscripcion.Id);
+        }
+        
+        seleccionarCarreras = false;
+        inscripcionesACarreras = await inscriptoCarreraService.GetByAlumno(alumno.Id);
+        
+        StateHasChanged();
+    }
+}

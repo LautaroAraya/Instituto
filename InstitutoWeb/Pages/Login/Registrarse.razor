@@ -3,7 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject ILogger<Registrarse> logger
 
-<!--Creamos un formulario que pide email,password, nombre completo -->
+<!--creamos un formulario que pide email, password, nombre completo-->
 <h3>Registrarse</h3>
 <EditForm Model="usuario" OnValidSubmit="Registro">
     <DataAnnotationsValidator />
@@ -23,14 +23,10 @@
     <button type="submit" class="btn btn-primary">Registrarse</button>
 </EditForm>
 
-@code{
-    Usuario usuario { get; set; } = new Usuario();
 
     private async Task Registro()
     {
-        var userId=await AuthService.createUserWithEmailAndPassword(usuario.Email, usuario.Password);
-        logger.LogInformation($"Usuario creado con id {userId}");
         NavigationManager.NavigateTo("/login");
     }
-
+        
 }

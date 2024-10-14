@@ -1,17 +1,8 @@
-﻿using InstitutoServices.Interfaces;
-using InstitutoServices.Services;
-using InstitutoDesktop.Views.Commons;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Services.Commons;
+﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
+using InstitutoServices.Interfaces;
 using InstitutoServices.Models.Inscripciones;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views.Inscripciones
 {
@@ -30,7 +21,10 @@ namespace InstitutoDesktop.Views.Inscripciones
 
         private async Task CargarGrilla()
         {
+            ShowInActivity.Show("Descargando/actualizando la lista de ciclos lectívos");
             listaCicloLectivos.DataSource = await ciclolectivoService.GetAllAsync();
+            dataGridCiclosLectivos.OcultarColumnas(new string[] { "Eliminado" });
+            ShowInActivity.Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

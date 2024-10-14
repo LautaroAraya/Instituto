@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using InstitutoServices.Models;
 using InstitutoBack.DataContext;
 using InstitutoServices.Models.Commons;
+using System.Text.RegularExpressions;
 
 namespace InstitutoBack.Controllers.Commons
 {
@@ -29,6 +30,8 @@ namespace InstitutoBack.Controllers.Commons
             return await _context.usuarios.ToListAsync();
         }
 
+
+
         // GET: api/ApiUsuarios/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
@@ -41,6 +44,38 @@ namespace InstitutoBack.Controllers.Commons
             }
 
             return usuario;
+        }
+
+        [HttpGet("getByEmail")]
+        public async Task<ActionResult<Usuario>> GetUserByEmail([FromQuery] string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)|| !Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                return BadRequest("no se recibió un email o no es válido.");
+            }
+
+            var user = await _context.usuarios.Include(u=>u.Alumno).Include(u=>u.Docente).Where(u=>u.Email.Equals(email)).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound("Usuario no encontrado.");
+            }
+
+            return Ok(user);
+        }
+
+        [HttpGet("getByDocente")]
+        public async Task<ActionResult<Usuario>> GetUserByDocente([FromQuery] int docenteId)
+        {
+
+            var user = await _context.usuarios.Include(u => u.Alumno).Include(u => u.Docente).Where(u => u.DocenteId.Equals(docenteId)).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound("Usuario no encontrado.");
+            }
+
+            return Ok(user);
         }
 
         // PUT: api/ApiUsuarios/5

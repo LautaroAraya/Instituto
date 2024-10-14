@@ -1,18 +1,9 @@
-﻿using InstitutoServices.Interfaces;
-using InstitutoServices.Services;
+﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
 using InstitutoDesktop.Views.Commons;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Models;
-using InstitutoServices.Services.Commons;
+using InstitutoServices.Interfaces;
 using InstitutoServices.Models.Commons;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views
 {
@@ -30,7 +21,10 @@ namespace InstitutoDesktop.Views
 
         private async Task CargarGrilla()
         {
+            ShowInActivity.Show("Descargando/actualizando la lista de carreras");
             listaCarreras.DataSource = await carreraService.GetAllAsync();
+            dataGridCarreras.OcultarColumnas(new string[] { "Eliminado" });
+            ShowInActivity.Hide();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

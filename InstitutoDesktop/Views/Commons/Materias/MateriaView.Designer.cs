@@ -136,6 +136,7 @@
             cboCarreras.Name = "cboCarreras";
             cboCarreras.Size = new Size(731, 32);
             cboCarreras.TabIndex = 8;
+            cboCarreras.SelectedIndexChanged += cboCarreras_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -156,6 +157,7 @@
             cboAniosCarreras.Name = "cboAniosCarreras";
             cboAniosCarreras.Size = new Size(731, 32);
             cboAniosCarreras.TabIndex = 15;
+            cboAniosCarreras.SelectedIndexChanged += cboAniosCarreras_SelectedIndexChanged;
             // 
             // label2
             // 

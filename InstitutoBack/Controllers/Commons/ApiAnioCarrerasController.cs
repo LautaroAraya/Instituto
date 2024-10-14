@@ -30,7 +30,7 @@ namespace InstitutoBack.Controllers.Commons
             {
                 return await _context.anioscarreras.Include(a => a.Carrera).Where(a => a.CarreraId.Equals(idCarrera)).ToListAsync();
             }
-            return await _context.anioscarreras.ToListAsync();
+            return await _context.anioscarreras.Include(a => a.Carrera).ToListAsync();
         }
 
         // GET: api/ApiAnioCarreras/5

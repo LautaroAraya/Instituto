@@ -1,0 +1,40 @@
+﻿<div class="container my-4">
+    <div class="row">
+        @foreach (var value in Enum.GetValues(EnumType))
+        {
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        @TituloCard
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@value.ToString()</h5>
+                        <p class="card-text"></p>
+                        <button class="btn btn-primary" @onclick="() => HandleSeleccionar(value)">Seleccionar</button>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Type EnumType { get; set; }
+
+    [Parameter]
+    public string TituloCard { get; set; }
+
+    [Parameter]
+    public EventCallback<Enum> OnSeleccionar { get; set; }
+
+    private void HandleSeleccionar(object value)
+    {
+        if (value is Enum enumValue)
+        {
+            OnSeleccionar.InvokeAsync(enumValue);
+        }
+    }
+}

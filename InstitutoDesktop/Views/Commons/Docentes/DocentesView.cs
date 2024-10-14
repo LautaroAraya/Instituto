@@ -1,37 +1,32 @@
 ﻿using InstitutoDesktop.ExtensionMethods;
+using InstitutoDesktop.Util;
 using InstitutoServices.Interfaces;
-using InstitutoServices.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Models;
-using InstitutoServices.Services.Commons;
 using InstitutoServices.Models.Commons;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views.Commons
 {
     public partial class DocentesView : Form
     {
         IGenericService<Docente> docenteService = new GenericService<Docente>();
-        BindingSource ListaDocente = new BindingSource();
+        BindingSource BindingDocente = new BindingSource();
+        List<Docente> listDocente = new List<Docente>();
 
         public DocentesView()
         {
             InitializeComponent();
-            dataGridDocentes.DataSource = ListaDocente;
+            dataGridDocentes.DataSource = BindingDocente;
             CargarGrilla();
 
         }
 
         private async Task CargarGrilla()
         {
-            ListaDocente.DataSource = await docenteService.GetAllAsync();
+            ShowInActivity.Show("Descargando/actualizando la lista de docentes");
+            listDocente = await docenteService.GetAllAsync();
+            dataGridDocentes.OcultarColumnas(new string[] { "Eliminado" });
+            ShowInActivity.Hide();
+            BindingDocente.DataSource = listDocente;
 
         }
 
@@ -44,7 +39,7 @@ namespace InstitutoDesktop.Views.Commons
 
         private async void iconButton1_Click(object sender, EventArgs e)
         {
-            var docente = (Docente)ListaDocente.Current;
+            var docente = (Docente)BindingDocente.Current;
             AgregarEditarDocenteView agregarEditarDocenteView = new AgregarEditarDocenteView(docente);
             agregarEditarDocenteView.ShowDialog();
             await CargarGrilla();
@@ -52,7 +47,7 @@ namespace InstitutoDesktop.Views.Commons
 
         private async void iconButton2_Click(object sender, EventArgs e)
         {
-            var docente = (Docente)ListaDocente.Current;
+            var docente = (Docente)BindingDocente.Current;
             var respuesta = MessageBox.Show($"¿Está seguro que quiere borrar el docente{docente.Nombre}", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
             {
@@ -65,6 +60,17 @@ namespace InstitutoDesktop.Views.Commons
         private void iconButton3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            BindingDocente.DataSource = listDocente.Where(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper())).ToList();
+
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            BtnBuscar.PerformClick();
         }
     }
 }

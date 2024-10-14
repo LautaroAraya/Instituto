@@ -26,7 +26,7 @@ namespace InstitutoBack.Controllers.Commons
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Docente>>> Getdocentes()
         {
-            return await _context.docentes.ToListAsync();
+            return await _context.docentes.OrderBy(d=>d.Nombre).ToListAsync();
         }
 
         // GET: api/ApiDocentes/5

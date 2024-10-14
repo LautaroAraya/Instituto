@@ -3,6 +3,11 @@
 @inject FirebaseAuthService AuthService
 @inject NavigationManager NavigationManager
 @inject SweetAlertService SweetAlert
+@inject ILogger<Login> logger
+@inject IUsuarioService usuarioService
+@inject NavigationManager NavigationManager
+@inject SweetAlertService SweetAlert
+
 
 
 @if (!IsAuthenticated)
@@ -19,18 +24,20 @@
             <label for="clave">Contraseña</label>
             <InputText class="form-control mb-2" type="password" @bind-Value="usuario.Password" />
         </div>
-        <div class="form-group">
-            <label>Recordar contraseña</label>
-          <InputCheckbox @bind-Value="rememberPassword" />
-        </div>
         <ValidationSummary />
         <button type="submit" class="btn btn-primary">Ingresar</button>
-        <button class="btn btn-primary" @onclick="Registrarse">Registrarse</button>
-        <button class="btn btn-primary" @onclick="LoginGoogle">Google</button>
     </EditForm>
+        <button class="btn btn-dark" @onclick="LoginGoogle">Google</button>
+       <button class="btn btn-info" @onclick="LoginFacebook">Facebook</button>
+      
+      
+
+    <button class="btn btn-dark" @onclick="ResetearPassword">Olvidé mi contraseña</button>
+
 }
 else
 {
+    <h1>Bienvenido @userFirebaseAuthenticate.DisplayName</h1>
     <button class="btn btn-primary" @onclick="CerrarSesion">Cerrar sesión</button>
 }
 
@@ -38,29 +45,22 @@ else
 @code {
     bool rememberPassword { get; set; } = false;
     Usuario usuario { get; set; } =new Usuario();
+
     bool IsAuthenticated { get; set; }=false;
+
+    FirebaseUser? userFirebaseAuthenticate { get; set; }=null;
 
     protected async override Task OnInitializedAsync()
     {
-        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
+
+        AuthService.OnChangeLogin += ChequeoEstadoLogin;
 
     }
 
     private async Task IniciarSesion()
     {
-        FirebaseUser user = await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password, rememberPassword);
-        //logger.LogInformation($"la confirmacion del email es igual a:{user.EmailVerified}");
-        if(!user.EmailVerified)
-        {
-            await SweetAlert.FireAsync(new SweetAlertOptions
-                {
-                    Title = "Verificacion de Email",
-                    Text = $"Debe verificar su email para poder continuar",
-                    Icon = SweetAlertIcon.Warning,
-                    ShowCancelButton = false,
-                    ConfirmButtonText = "Aceptar",
-                });
-        }
+        await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password);
         IsAuthenticated = await AuthService.IsUserAuthenticated();
         StateHasChanged();
     }
@@ -69,9 +69,10 @@ else
     {
         await AuthService.SignOut();
         usuario = new Usuario();
-        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
         StateHasChanged();
     }
+
     private async Task Registrarse()
     {
         NavigationManager.NavigateTo("/registrarse");
@@ -80,5 +81,22 @@ else
     private async Task LoginGoogle()
     {
         await AuthService.LoginWithGoogle();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
+        StateHasChanged();
+    } 
+
+    private async Task LoginFacebook()
+    {
+        await AuthService.LoginWithFacebook();
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
+        StateHasChanged();
     }
+
+    public async void ChequeoEstadoLogin()
+    {
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
+        // logger.LogInformation($"userFirebaseAuthenticate={userFirebaseAuthenticate.PropertiesToString()}");
+        StateHasChanged();
+     }
+        
 }

@@ -1,18 +1,7 @@
 ﻿using InstitutoDesktop.ExtensionMethods;
-using InstitutoServices.Services;
-using InstitutoDesktop.Views.Commons.AnioCarreras;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InstitutoServices.Models;
-using InstitutoServices.Services.Commons;
+using InstitutoDesktop.Util;
 using InstitutoServices.Models.Commons;
+using InstitutoServices.Services.Commons;
 
 namespace InstitutoDesktop.Views.Commons.Materias
 {
@@ -21,69 +10,74 @@ namespace InstitutoDesktop.Views.Commons.Materias
         GenericService<Carrera> carreraService = new GenericService<Carrera>();
         AnioCarreraService anioCarreraService = new AnioCarreraService();
         MateriaService materiaService = new MateriaService();
-        BindingSource listaAniosCarrera = new BindingSource();
-        BindingSource listaCarreras = new BindingSource();
-        BindingSource listaMaterias = new BindingSource();
+        BindingSource BindingAniosCarrera = new BindingSource();
+        BindingSource BindingCarreras = new BindingSource();
+        BindingSource BindingMaterias = new BindingSource();
+        List<AnioCarrera>? ListAniosCarreraFiltrada = new List<AnioCarrera>();
+        List<Materia>? ListMateriasFiltrada = new List<Materia>();
 
         public MateriaView()
         {
             InitializeComponent();
 
-            // Asignar DataSources
-            dataGridMaterias.DataSource = listaMaterias;
-            cboCarreras.DataSource = listaCarreras;
-            cboAniosCarreras.DataSource = listaAniosCarrera;
-
-            // Cargar datos en los ComboBox
-            CargarCboCarreras();
-
-            // Agregar eventos
-            cboCarreras.SelectedIndexChanged += new EventHandler(CargarAniosCarrerasPorCarreraSeleccionada);
-            cboAniosCarreras.SelectedIndexChanged += new EventHandler(FiltrosCambiados);
+            ObtenerListas();
         }
 
+        private async void ObtenerListas()
+        {
+            ShowInActivity.Show("Descargando carreras, años de la carrera y materias");
+            var tareas = new List<Task>()
+            {
+                Task.Run(async () => BindingCarreras.DataSource = await carreraService.GetAllAsync()),
+                Task.Run(async () => ListAniosCarreraFiltrada = await anioCarreraService.GetAllAsync()),
+                Task.Run(async () => ListMateriasFiltrada = await materiaService.GetAllAsync())
+            };
+            await Task.WhenAll(tareas);
+            ShowInActivity.Hide();
+            BindingAniosCarrera.DataSource = ListAniosCarreraFiltrada;
+            BindingMaterias.DataSource = ListMateriasFiltrada;
+            CargarCboCarreras();
+        }
+
+        private async void ActualizarLista()
+        {
+            ShowInActivity.Show("Actualizando la lista de materias");
+            var tareas = new List<Task>()
+            {
+                Task.Run(async () => ListMateriasFiltrada = await materiaService.GetAllAsync())
+            };
+            await Task.WhenAll(tareas);
+            ShowInActivity.Hide();
+            BindingMaterias.DataSource = ListMateriasFiltrada;
+            CargarDatosEnGrilla();
+        }
         private async void CargarCboCarreras()
         {
-            listaCarreras.DataSource = await carreraService.GetAllAsync();
+            cboCarreras.DataSource = BindingCarreras;
             cboCarreras.DisplayMember = "Nombre";
             cboCarreras.ValueMember = "Id";
-
-            // Si hay alguna carrera seleccionada, cargar los años correspondientes
-            if (cboCarreras.Items.Count > 0)
-            {
-                cboCarreras.SelectedIndex = 0; // Seleccionar la primera carrera
-                CargarAniosCarrerasPorCarreraSeleccionada(null, null);
-            }
+            CargarCboAnioCarreras();
         }
 
-        private async void CargarAniosCarrerasPorCarreraSeleccionada(object? sender, EventArgs? e)
+        private void CargarCboAnioCarreras()
         {
             if (cboCarreras.SelectedValue is int carreraId)
             {
-                listaAniosCarrera.DataSource = await anioCarreraService.GetByCarreraAsync(carreraId);
+                cboAniosCarreras.DataSource = BindingAniosCarrera;
+                BindingAniosCarrera.DataSource = ListAniosCarreraFiltrada.Where(a => a.CarreraId.Equals(carreraId)).ToList();
                 cboAniosCarreras.DisplayMember = "Nombre";
                 cboAniosCarreras.ValueMember = "Id";
-
-                // Si hay algún año seleccionado, actualizar la grilla
-                if (cboAniosCarreras.Items.Count > 0)
-                {
-                    cboAniosCarreras.SelectedIndex = 0; // Seleccionar el primer año
-                    await CargarDatosEnGrilla();
-                }
+                CargarDatosEnGrilla();
             }
         }
 
-        private async void FiltrosCambiados(object sender, EventArgs e)
-        {
-            await CargarDatosEnGrilla();
-        }
 
         private async Task CargarDatosEnGrilla()
         {
             if (cboCarreras.SelectedValue is int carreraId && cboAniosCarreras.SelectedValue is int anioCarreraId)
             {
-                var materias = await materiaService.GetByAnioCarreraAsync(anioCarreraId);
-                listaMaterias.DataSource = materias;
+                dataGridMaterias.DataSource = BindingMaterias;
+                BindingMaterias.DataSource = ListMateriasFiltrada.Where(a => a.AnioCarreraId.Equals(anioCarreraId)).ToList();
                 dataGridMaterias.OcultarColumnas(new string[] { "AnioCarreraId", "AnioCarrera", "Eliminado" });
                 dataGridMaterias.EstablecerAnchoDeColumnas(new int[] { 100, 350 });
             }
@@ -92,8 +86,8 @@ namespace InstitutoDesktop.Views.Commons.Materias
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             // Obtener la carrera y el año seleccionados
-            var carrera = (Carrera)listaCarreras.Current;
-            var anioCarrera = (AnioCarrera)listaAniosCarrera.Current;
+            var carrera = (Carrera)BindingCarreras.Current;
+            var anioCarrera = (AnioCarrera)BindingAniosCarrera.Current;
 
             // Crear el formulario para agregar una nueva materia
             NuevoEditarMateriaView nuevoEditarMateriaView = new NuevoEditarMateriaView(carrera, anioCarrera);
@@ -102,33 +96,49 @@ namespace InstitutoDesktop.Views.Commons.Materias
             nuevoEditarMateriaView.ShowDialog();
 
             // Si se agregó la materia, actualizar la grilla
-            CargarDatosEnGrilla();
+            ActualizarLista();
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var materia = (Materia)listaMaterias.Current;
-            var aniocarrera = (AnioCarrera)listaAniosCarrera.Current;
-            NuevoEditarMateriaView nuevoEditarMateriaView = new NuevoEditarMateriaView(materia,aniocarrera);
+            var materia = (Materia)BindingMaterias.Current;
+            var aniocarrera = (AnioCarrera)BindingAniosCarrera.Current;
+            NuevoEditarMateriaView nuevoEditarMateriaView = new NuevoEditarMateriaView(materia, aniocarrera);
             nuevoEditarMateriaView.ShowDialog();
-            CargarDatosEnGrilla();
+            ActualizarLista();
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
-            var materia = (Materia)listaMaterias.Current;
+            var materia = (Materia)BindingMaterias.Current;
             var respuesta = MessageBox.Show($"¿Está seguro que quiere borrar la materia {materia.Nombre}", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
             {
                 await materiaService.DeleteAsync(materia.Id);
-                CargarDatosEnGrilla();
+                ActualizarLista();
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboCarreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCarreras.SelectedValue != null && cboCarreras.SelectedValue.GetType() == typeof(int))
+            {
+                CargarCboAnioCarreras();
+            }
+        }
+
+        private void cboAniosCarreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboAniosCarreras.SelectedValue != null && cboAniosCarreras.SelectedValue.GetType() == typeof(int))
+            {
+                CargarDatosEnGrilla();
+            }
         }
     }
 }

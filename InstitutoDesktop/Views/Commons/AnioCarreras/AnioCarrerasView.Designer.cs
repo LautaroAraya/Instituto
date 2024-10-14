@@ -1,6 +1,6 @@
 ﻿namespace InstitutoDesktop.Views.Commons.AnioCarreras
 {
-    partial class AnioCarreraView
+    partial class AnioCarrerasView
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,8 @@
             // 
             // dataGridAniosCarrera
             // 
+            dataGridAniosCarrera.AllowUserToAddRows = false;
+            dataGridAniosCarrera.AllowUserToDeleteRows = false;
             dataGridAniosCarrera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridAniosCarrera.BackgroundColor = Color.White;
             dataGridAniosCarrera.BorderStyle = BorderStyle.None;
@@ -70,6 +72,7 @@
             dataGridAniosCarrera.Location = new Point(91, 84);
             dataGridAniosCarrera.Margin = new Padding(3, 4, 3, 4);
             dataGridAniosCarrera.Name = "dataGridAniosCarrera";
+            dataGridAniosCarrera.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 128, 255);
             dataGridViewCellStyle1.Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -147,7 +150,7 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // AnioCarreraView
+            // AnioCarrerasView
             // 
             AutoScaleDimensions = new SizeF(9F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -162,7 +165,7 @@
             Controls.Add(label1);
             Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "AnioCarreraView";
+            Name = "AnioCarrerasView";
             RightToLeft = RightToLeft.No;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Años Carrera";

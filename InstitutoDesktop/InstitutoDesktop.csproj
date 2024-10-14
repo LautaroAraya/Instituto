@@ -9,6 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\MesaExamen\**" />
+    <EmbeddedResource Remove="Views\MesaExamen\**" />
+    <None Remove="Views\MesaExamen\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\loading.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
   </ItemGroup>
@@ -35,10 +51,8 @@
 
   <ItemGroup>
     <Folder Include="Views\Inscripciones\" />
-    <Folder Include="Views\Horarios\" />
 
     <Folder Include="Views\MesasExamenes\" />
-    <Folder Include="Views\MesaExamen\" />
 
   </ItemGroup>
 

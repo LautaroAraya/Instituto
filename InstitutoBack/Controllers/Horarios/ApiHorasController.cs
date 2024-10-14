@@ -26,7 +26,7 @@ namespace InstitutoBack.Controllers.Horarios
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Hora>>> Gethoras()
         {
-            return await _context.horas.ToListAsync();
+            return await _context.horas.OrderBy(h=>h.Desde).ToListAsync();
         }
 
         // GET: api/ApiHoras/5

@@ -1,0 +1,47 @@
+@inject IGenericService<Docente> docenteService
+@inject IUsuarioService usuarioService
+@inject SweetAlertService SweetAlert
+
+
+@if(docentes==null)
+{
+    <p><em>Cargando información de los docentes...</em></p>
+}
+else
+{
+    <h4>Selecciona el docente</h4>
+    <TableIdNombreSelectionWithFilter ListEntity="@(docentes.Cast<IEntityIdNombre>().ToList())" OnSeleccionar="HandleSeleccionarDocente" />
+}
+
+
+@code {
+
+
+    [Parameter]
+    public EventCallback<Docente> OnSeleccionarDocente { get; set; }
+    List<Docente> docentes = new List<Docente>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        docentes = await docenteService.GetAllAsync();
+        
+    }
+    private async Task HandleSeleccionarDocente(IEntityIdNombre docente)
+    {
+        var usuario=await usuarioService.GetUserByDocente(docente.Id);
+        if(usuario!=null)
+        {
+            await SweetAlert.FireAsync(new SweetAlertOptions
+                {
+                    Title = "Docente ya asignado",
+                    Text = $"El docente ya tiene un usuario asignado, su nombre es {usuario.User} su email es {usuario.Email}",
+                    Icon = SweetAlertIcon.Info,
+                    ShowCancelButton = false,
+                    ConfirmButtonText = "Ok",
+                });
+            return;
+        }else
+            await OnSeleccionarDocente.InvokeAsync((Docente)docente);
+    }
+}
+

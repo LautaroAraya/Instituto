@@ -1,0 +1,42 @@
+﻿<div class="container my-4">
+    <div class="row">
+        
+            @foreach (var entity in ListEntity)
+            {
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            @TituloCard
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@entity.Nombre</h5>
+                            <p class="card-text"></p>
+                       
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                        <InputCheckbox @bind-Value="entity.Eliminado" Label="Seleccionar"  />
+                        </div>
+                    </div>
+                </div>
+            }
+        <button class="btn btn-primary" @onclick="()=>HandleSeleccionar(ListEntity)">Seleccionar</button>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public List<IEntityIdNombre> ListEntity { get; set; }
+
+    [Parameter]
+    public string TituloCard { get; set; }
+
+    [Parameter]
+    public EventCallback<List<IEntityIdNombre>> OnSeleccionar { get; set; }
+
+    private void HandleSeleccionar(List<IEntityIdNombre> listSelected)
+    {
+        OnSeleccionar.InvokeAsync(listSelected.Where(e=>e.Eliminado==true).ToList());
+    }
+}
