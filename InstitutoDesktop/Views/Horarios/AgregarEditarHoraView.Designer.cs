@@ -101,15 +101,18 @@
             chkRecreo.TabIndex = 14;
             chkRecreo.Text = "Recreo";
             chkRecreo.UseVisualStyleBackColor = true;
+            chkRecreo.CheckedChanged += chkRecreo_CheckedChanged;
             // 
             // dateTimeDesde
             // 
             dateTimeDesde.Format = DateTimePickerFormat.Time;
             dateTimeDesde.Location = new Point(278, 51);
+            dateTimeDesde.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
             dateTimeDesde.Name = "dateTimeDesde";
             dateTimeDesde.Size = new Size(135, 27);
             dateTimeDesde.TabIndex = 15;
             dateTimeDesde.Value = new DateTime(2024, 10, 10, 14, 53, 0, 0);
+            dateTimeDesde.Leave += dateTimeDesde_Leave;
             // 
             // dateTimeHasta
             // 
@@ -118,6 +121,8 @@
             dateTimeHasta.Name = "dateTimeHasta";
             dateTimeHasta.Size = new Size(135, 27);
             dateTimeHasta.TabIndex = 16;
+            dateTimeHasta.Value = new DateTime(2024, 10, 10, 16, 44, 31, 0);
+            dateTimeHasta.Leave += dateTimeHasta_Leave;
             // 
             // label2
             // 

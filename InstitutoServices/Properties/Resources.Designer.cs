@@ -61,7 +61,7 @@ namespace InstitutoServices.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://databacklauty.azurewebsites.net/api/.
+        ///   Busca una cadena traducida similar a https://localhost:7202/api/.
         /// </summary>
         internal static string UrlApi {
             get {
