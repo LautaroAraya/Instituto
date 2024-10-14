@@ -22,6 +22,7 @@ namespace InstitutoDesktop.Views.Horarios
         private async Task CargarGrilla()
         {
             listaHoras.DataSource = await horaService.GetAllAsync();
+            dataGridHoras.OcultarColumnas(new string[] { "Desde", "Hasta", "Eliminado" });
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
