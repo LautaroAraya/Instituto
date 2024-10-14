@@ -2,7 +2,7 @@
 using InstitutoDesktop.Util;
 using InstitutoServices.Interfaces;
 using InstitutoServices.Models.Horarios;
-using InstitutoServices.Services.Commons;
+using InstitutoDesktop.ExtensionMethods;
 
 namespace InstitutoDesktop.Views.Horarios
 {
@@ -21,12 +21,7 @@ namespace InstitutoDesktop.Views.Horarios
         }
         private async Task CargarGrilla()
         {
-            ShowInActivity.Show("Descargando/actualizando la lista de horas");
-            listaHoras = await horaService.GetAllAsync();
-            ShowInActivity.Hide();
-            BindingHoras.DataSource = listaHoras.ToList();
-            dataGridHoras.OcultarColumnas(new string[] { "Desde", "Hasta", "Eliminado" });
-
+            listaHoras.DataSource = await horaService.GetAllAsync();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -106,55 +106,13 @@
             // dateTimeDesde
             // 
             dateTimeDesde.Format = DateTimePickerFormat.Time;
-            dateTimeDesde.Location = new Point(308, 64);
-            dateTimeDesde.Margin = new Padding(2, 2, 2, 2);
-            dateTimeDesde.Name = "dateTimeDesde";
-            dateTimeDesde.ShowUpDown = true;
-            dateTimeDesde.Size = new Size(125, 27);
-            dateTimeDesde.TabIndex = 15;
-            dateTimeDesde.Leave += dateTimeDesde_Leave;
-            // 
-            // dateTimeHasta
-            // 
-            dateTimeHasta.Format = DateTimePickerFormat.Time;
-            dateTimeHasta.Location = new Point(308, 116);
-            dateTimeHasta.Margin = new Padding(2, 2, 2, 2);
-            dateTimeHasta.Name = "dateTimeHasta";
-            dateTimeHasta.ShowUpDown = true;
-            dateTimeHasta.Size = new Size(125, 27);
-            dateTimeHasta.TabIndex = 16;
-            dateTimeHasta.Leave += dateTimeHasta_Leave;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F);
-            label2.Location = new Point(228, 64);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 25);
-            label2.TabIndex = 17;
-            label2.Text = "Desde:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11F);
-            label3.Location = new Point(228, 116);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 25);
-            label3.TabIndex = 18;
-            label3.Text = "Hasta:";
-            // 
-            // dateTimeDesde
-            // 
-            dateTimeDesde.Format = DateTimePickerFormat.Time;
             dateTimeDesde.Location = new Point(278, 51);
+            dateTimeDesde.MinDate = new DateTime(2001, 1, 1, 0, 0, 0, 0);
             dateTimeDesde.Name = "dateTimeDesde";
             dateTimeDesde.Size = new Size(135, 27);
             dateTimeDesde.TabIndex = 15;
             dateTimeDesde.Value = new DateTime(2024, 10, 10, 14, 53, 0, 0);
+            dateTimeDesde.Leave += dateTimeDesde_Leave;
             // 
             // dateTimeHasta
             // 
@@ -163,6 +121,8 @@
             dateTimeHasta.Name = "dateTimeHasta";
             dateTimeHasta.Size = new Size(135, 27);
             dateTimeHasta.TabIndex = 16;
+            dateTimeHasta.Value = new DateTime(2024, 10, 10, 16, 44, 31, 0);
+            dateTimeHasta.Leave += dateTimeHasta_Leave;
             // 
             // label2
             // 
