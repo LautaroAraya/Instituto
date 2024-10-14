@@ -120,4 +120,7 @@
   <data name="client_id" xml:space="preserve">
     <value>243005933117-9jrpnqa9f296itha7jlaa3nmh23et4vu</value>
   </data>
+  <data name="UrlApi" xml:space="preserve">
+    <value>https://datainstituto.azurewebsites.net/api/</value>
+  </data>
 </root>
