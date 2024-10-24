@@ -1,5 +1,10 @@
 ﻿@page "/login"
+@using InstitutoServices.Models.Login
 @inject FirebaseAuthService AuthService
+@inject NavigationManager NavigationManager
+@inject SweetAlertService SweetAlert
+@inject ILogger<Login> logger
+@inject IUsuarioService usuarioService
 @inject NavigationManager NavigationManager
 @inject SweetAlertService SweetAlert
 
@@ -38,6 +43,7 @@ else
 
 
 @code {
+    bool rememberPassword { get; set; } = false;
     Usuario usuario { get; set; } =new Usuario();
 
     bool IsAuthenticated { get; set; }=false;
@@ -53,11 +59,34 @@ else
 
     private async Task IniciarSesion()
     {
-        await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password);
-        IsAuthenticated = await AuthService.IsUserAuthenticated();
+        LoginResponse response= await AuthService.SignInWithEmailPassword(usuario.Email, usuario.Password, remenberPassword);
+        //logger.LogInformation($"la confirmación del email es igual a:{user.EmailVerified}");
+        if(response.User==null)  
+        {
+            await SweetAlert.FireAsync(new SweetAlertOptions
+            {
+                Title = "Error inicio de sesión",
+                Text = $"Error:{response.Error}",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = false,
+                ConfirmButtonText = "Ok",
+            });
+        }
+        else
+        if(!response.User.EmailVerified)
+        {
+            await SweetAlert.FireAsync(new SweetAlertOptions
+            {
+                Title = "Verificación de email",
+                Text = $"{response.User.DisplayName} Debe verificar su email para poder continuar",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = false,
+                ConfirmButtonText = "Ok",
+            });
+        }
+        
+        userFirebaseAuthenticate = await AuthService.GetUserAuthenticated();
         StateHasChanged();
-    }
-
     }
 
     private async Task CerrarSesion()

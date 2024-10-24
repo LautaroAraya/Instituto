@@ -18,6 +18,12 @@ else
                     <label class="form-label">Hora:</label>
                     @* <InputText class="form-control mb-2" type="text" @bind-Value="horaEdit.Nombre" /> *@
                 </div>
+                <div class="col-md-3">
+                    <label class="form-label">Recreo:</label>
+                    <InputCheckbox @bind-Value="horaEdit.EsRecreo" class="form-check" />
+                    <label class="form-label">Hora:</label>
+                    @* <InputText class="form-control mb-2" type="text" @bind-Value="horaEdit.Nombre" /> *@
+                </div>
                 <ValidationSummary />
                 <ButtonsGuardarCancelar isEditing="@isEditing"  OnCancelar="HandleCancelar" />
             </div>

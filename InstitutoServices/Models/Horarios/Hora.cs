@@ -20,6 +20,20 @@ namespace InstitutoServices.Models.Horarios
 
         public DateTime Desde { get; set; } = DateTime.MinValue;
         public DateTime Hasta { get; set; } = DateTime.MinValue;
+        
+        [NotMapped]
+        public string Nombre
+        {
+            get {
+                var recreo = EsRecreo ? "Recreo" : "";
+                return $"{recreo}{Desde.Hour:D2}:" +
+                    $"{Desde.Minute:D2} - " +
+                    $"{Hasta.Hour:D2}:" +
+                    $"{Hasta.Minute:D2}"; }
+        }
+
+        public DateTime Desde { get; set; } = DateTime.MinValue;
+        public DateTime Hasta { get; set; } = DateTime.MinValue;
         public bool EsRecreo { get; set; } = false;
         public bool Eliminado { get; set; } = false;
 

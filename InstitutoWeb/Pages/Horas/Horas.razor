@@ -15,6 +15,7 @@
 else
 {
     <NuevoEditarHora Hora="@currentHora" OnCancelar="Cancelar" OnGuardar="Guardar" />
+     <TableHoras ListHoras="horas" OnEditar="Editar" OnEliminar="Eliminar" /> 
     @* <TableIdNombre ListEntity="@(horas.Cast<IEntityIdNombre>().ToList())" OnEditar="Editar" OnEliminar="Eliminar" /> *@
 }
 

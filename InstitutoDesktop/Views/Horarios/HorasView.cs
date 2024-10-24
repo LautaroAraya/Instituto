@@ -2,6 +2,7 @@
 using InstitutoDesktop.Util;
 using InstitutoServices.Interfaces;
 using InstitutoServices.Models.Horarios;
+using InstitutoServices.Services.Commons;
 using InstitutoDesktop.ExtensionMethods;
 
 namespace InstitutoDesktop.Views.Horarios

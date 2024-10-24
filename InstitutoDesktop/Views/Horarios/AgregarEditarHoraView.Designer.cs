@@ -42,6 +42,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Segoe UI", 11F);
+            txtNombre.Location = new Point(308, 194);
             txtNombre.Location = new Point(278, 216);
             txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
@@ -101,9 +102,6 @@
             chkRecreo.TabIndex = 14;
             chkRecreo.Text = "Recreo";
             chkRecreo.UseVisualStyleBackColor = true;
-            chkRecreo.CheckedChanged += chkRecreo_CheckedChanged;
-            // 
-            // dateTimeDesde
             // 
             dateTimeDesde.Format = DateTimePickerFormat.Time;
             dateTimeDesde.Location = new Point(278, 51);
