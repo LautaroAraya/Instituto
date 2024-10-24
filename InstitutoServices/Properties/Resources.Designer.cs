@@ -61,6 +61,15 @@ namespace InstitutoServices.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a true.
+        /// </summary>
+        internal static string Remoto {
+            get {
+                return ResourceManager.GetString("Remoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://localhost:7202/api/.
         /// </summary>
         internal static string UrlApiRemoto {
