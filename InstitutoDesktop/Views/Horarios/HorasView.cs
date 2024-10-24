@@ -21,8 +21,12 @@ namespace InstitutoDesktop.Views.Horarios
         }
         private async Task CargarGrilla()
         {
-            listaHoras.DataSource = await horaService.GetAllAsync();
+            ShowInActivity.Show("Descargando/actualizando la lista de horas");
+            listaHoras = await horaService.GetAllAsync();
+            ShowInActivity.Hide();
+            BindingHoras.DataSource = listaHoras.ToList();
             dataGridHoras.OcultarColumnas(new string[] { "Desde", "Hasta", "Eliminado" });
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

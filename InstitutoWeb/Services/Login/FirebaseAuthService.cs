@@ -58,31 +58,16 @@ namespace InstitutoWeb.Services.Login
             return userId;
         }
             public async Task SignOut()
-        {
-            await _jsRuntime.InvokeVoidAsync("firebaseAuth.signOut");
-            await _jsRuntime.InvokeVoidAsync("localStorageHelper.removeItem", UserIdKey);
-            await _jsRuntime.InvokeVoidAsync("sessionStorageHelper.removeItem", UserIdKey);
-            OnChangeLogin?.Invoke();
-        }
-
-        public async Task<string> GetUserIdInLocalStorage()
-        {
-            return await _jsRuntime.InvokeAsync<string>("localStorageHelper.getItem", UserIdKey);
-        }
-        public async Task<string> GetUserIdInSesionStorage()
-        {
-            return await _jsRuntime.InvokeAsync<string>("sessionStorageHelper.getItem", UserIdKey);
-        }
-
-
-        public async Task<bool> IsUserAuthenticated()
-        {
-            var userId = await GetUserIdInLocalStorage();
-            if (string.IsNullOrEmpty(userId))
             {
-                userId = await GetUserIdInSesionStorage();
+                OnChangeLogin?.Invoke();
             }
-            return !string.IsNullOrEmpty(userId);
+        }
+        {
+
+
+            {
+            {
+        }
         }
     }
 }

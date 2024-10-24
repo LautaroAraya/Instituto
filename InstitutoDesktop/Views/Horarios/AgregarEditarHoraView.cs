@@ -59,8 +59,10 @@ namespace InstitutoDesktop.Views.Horarios
 
         private void LeerValoresDePantalla()
         {
-            hora.Desde=new DateTime(1,1,1, dateTimeDesde.Value.Hour, dateTimeDesde.Value.Minute, 0);
+            //obtenemos exclusivamente del datetime la hora y los minutos y definimos la fecha como 1/1/1 y los milisegundos como 0
+            hora.Desde = new DateTime(1, 1, 1, dateTimeDesde.Value.Hour, dateTimeDesde.Value.Minute, 0);
             hora.Hasta = new DateTime(1, 1, 1, dateTimeHasta.Value.Hour, dateTimeHasta.Value.Minute, 0);
+
 
             hora.EsRecreo = chkRecreo.Checked;
             txtNombre.Text = hora.Nombre;
@@ -75,6 +77,8 @@ namespace InstitutoDesktop.Views.Horarios
         {
             LeerValoresDePantalla();
         }
+
+
 
         private void dateTimeDesde_Leave(object sender, EventArgs e)
         {
