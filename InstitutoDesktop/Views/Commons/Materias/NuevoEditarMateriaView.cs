@@ -41,12 +41,15 @@ namespace InstitutoDesktop.Views.Commons.Materias
             }
             // Mostrar el nombre de la materia en el TextBox correspondiente
             txtMateria.Text = materia.Nombre;
+            // Mostrar si la materia es recreo o no en el CheckBox correspondiente
+            chkEsRecreo.Checked = materia.EsRecreo;
         }
 
-            private async void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
 
             materia.Nombre = txtMateria.Text;
+            materia.EsRecreo = chkEsRecreo.Checked;
 
             if (materia.Id == 0)
             {

@@ -27,7 +27,7 @@ namespace InstitutoServices.Services.Commons
             string urlApi;
             if (Properties.Resources.Remoto == "false")
             {
-                urlApi = Properties.Resources.UrlApiLocal;
+                urlApi = Properties.Resources.UrlApiRemoto;
             }else
             {
                 urlApi = Properties.Resources.UrlApiRemoto;
